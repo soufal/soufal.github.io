@@ -7,18 +7,18 @@
   
   <title>Git note | 行寂静行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Git分布式版本控制系统：一、简介 随时掌握工作区的状态，使用git status命令。 如果git status 告诉你有文件被修改过，可以用git diff 查看修改内容。 在git中进行修改后可以保存一个快照，称为commit，如果文件被删除，可以通过最近一个commit恢复。 使用git log命令来查看历史记录。  --pretty=oneline参数简要输出相关信息。   回退到上一个">
-<meta name="keywords" content="git note">
+  <meta name="description" content="Git noteGit分布式版本控制系统：学习廖雪峰的git教程（https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000） 笔记。 一、简介 随时掌握工作区的状态，使用git status命令。 如果git status 告诉你有文件被修改过，可以用git diff 查看修改内容。 在g">
+<meta name="keywords" content="git，note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git note">
 <meta property="og:url" content="http://soufal.cn/2018/06/15/git-note/index.html">
 <meta property="og:site_name" content="行寂静行">
-<meta property="og:description" content="Git分布式版本控制系统：一、简介 随时掌握工作区的状态，使用git status命令。 如果git status 告诉你有文件被修改过，可以用git diff 查看修改内容。 在git中进行修改后可以保存一个快照，称为commit，如果文件被删除，可以通过最近一个commit恢复。 使用git log命令来查看历史记录。  --pretty=oneline参数简要输出相关信息。   回退到上一个">
+<meta property="og:description" content="Git noteGit分布式版本控制系统：学习廖雪峰的git教程（https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000） 笔记。 一、简介 随时掌握工作区的状态，使用git status命令。 如果git status 告诉你有文件被修改过，可以用git diff 查看修改内容。 在g">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-15T07:27:16.739Z">
+<meta property="og:updated_time" content="2018-06-15T08:04:49.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git note">
-<meta name="twitter:description" content="Git分布式版本控制系统：一、简介 随时掌握工作区的状态，使用git status命令。 如果git status 告诉你有文件被修改过，可以用git diff 查看修改内容。 在git中进行修改后可以保存一个快照，称为commit，如果文件被删除，可以通过最近一个commit恢复。 使用git log命令来查看历史记录。  --pretty=oneline参数简要输出相关信息。   回退到上一个">
+<meta name="twitter:description" content="Git noteGit分布式版本控制系统：学习廖雪峰的git教程（https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000） 笔记。 一、简介 随时掌握工作区的状态，使用git status命令。 如果git status 告诉你有文件被修改过，可以用git diff 查看修改内容。 在g">
   
     <link rel="alternate" href="/atom.xml" title="行寂静行" type="application/atom+xml">
   
@@ -91,7 +91,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Git分布式版本控制系统："><a href="#Git分布式版本控制系统：" class="headerlink" title="Git分布式版本控制系统："></a>Git分布式版本控制系统：</h2><h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><ul>
+        <h1 id="Git-note"><a href="#Git-note" class="headerlink" title="Git note"></a>Git note</h1><h2 id="Git分布式版本控制系统："><a href="#Git分布式版本控制系统：" class="headerlink" title="Git分布式版本控制系统："></a>Git分布式版本控制系统：</h2><p>学习廖雪峰的git教程（<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000）" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000）</a> 笔记。</p>
+<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><ul>
 <li>随时掌握工作区的状态，使用<code>git status</code>命令。</li>
 <li>如果<code>git status</code> 告诉你有文件被修改过，可以用<code>git diff</code> 查看修改内容。</li>
 <li>在<code>git</code>中进行修改后可以保存一个快照，称为<code>commit</code>，如果文件被删除，可以通过最近一个<code>commit</code>恢复。</li>
@@ -129,15 +130,32 @@
 <li><p>在修改文件并使用了<code>git add</code>将文件放到了暂存区后，可以使用<code>git reset HEAD &lt;file&gt;</code>命令可以把<em>暂存区</em>的修改撤销掉（unstage），重新将文件放回工作区。</p>
 </li>
 </ul>
-<h3 id="四、删除文件"><a href="#四、删除文件" class="headerlink" title="四、删除文件"></a>四、删除文件</h3><p>当需要删除已给文件时，在工作区将文件删除后，需要从版本库删除文件<code>git rm &lt;file&gt;</code>。然后使用<code>git commit -m &quot;&quot;</code>进行提交，这样工作区和版本库都将该文件删除了。<br>如果在工作区中删错了文件，可以使用<code>git checkout -- &lt;file&gt;</code>将误删的文件恢复到最新版本<em>实际上该命令是用版本库里的版本替换工作区的版本</em>。—</p>
+<h3 id="四、删除文件"><a href="#四、删除文件" class="headerlink" title="四、删除文件"></a>四、删除文件</h3><p>当需要删除已给文件时，在工作区将文件删除后，需要从版本库删除文件<code>git rm &lt;file&gt;</code>。然后使用<code>git commit -m &quot;&quot;</code>进行提交，这样工作区和版本库都将该文件删除了。<br>如果在工作区中删错了文件，可以使用<code>git checkout -- &lt;file&gt;</code>将误删的文件恢复到最新版本<em>实际上该命令是用版本库里的版本替换工作区的版本</em>。</p>
+<h3 id="五、远程仓库"><a href="#五、远程仓库" class="headerlink" title="五、远程仓库"></a>五、远程仓库</h3><ul>
+<li>关联<code>github</code>：  </li>
+</ul>
+<ol>
+<li>创建SSH Key：使用<code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code>创建秘钥。</li>
+<li>进入<code>.shh</code>文件夹复制<code>id_rsa.pub</code>公钥中的内容到Github中的<code>Add SSH Key</code>中。<br><em>如果有多台电脑，则可以在每一台电脑中生成一个新的Key并添加到github中。</em></li>
+</ol>
+<ul>
+<li>添加远程库：  <ul>
+<li>在github上新建一个仓库后，同本地已有的仓库关联，然后把本地仓库推送到Github库：使用<code>git remote add origin https://github.com/soufal/my_git.git</code>，这样添加后的远程库的名字就为<code>origin</code>，是git的默认叫法。</li>
+</ul>
+</li>
+<li>推送：<ul>
+<li>使用<code>git push -u origin master</code>把本地库的所有内容推送到远程库。<br>**这里使用加<code>-u</code>的命令是因为第一次推送<code>master</code>分支时，Git不但会吧本地的<code>master</code>分支内容推送到远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或拉取时就可以简化命令了。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://soufal.cn/2018/06/15/git-note/" data-id="cjifnhmlz00035pu9o2jg9zss" class="article-share-link">Share</a>
+      <a data-url="http://soufal.cn/2018/06/15/git-note/" data-id="cjifou6y600019uu95q9ue13n" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-note/">git note</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git，note/">git，note</a></li></ul>
 
     </footer>
   </div>
@@ -167,7 +185,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-note/">git note</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/">note</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git，note/">git，note</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/">note</a></li></ul>
     </div>
   </div>
 
@@ -177,7 +195,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/git-note/" style="font-size: 10px;">git note</a> <a href="/tags/note/" style="font-size: 10px;">note</a>
+      <a href="/tags/git，note/" style="font-size: 10px;">git，note</a> <a href="/tags/note/" style="font-size: 10px;">note</a>
     </div>
   </div>
 
