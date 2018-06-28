@@ -180,7 +180,7 @@
 }( typeof global !== "undefined" ? global : this ) );
 </script>
 
-    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="icon" href= "/assets/soufal.jpg" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
     <link rel="preload" href="/scripts/main.js" as="script" />
@@ -267,7 +267,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">261</span> / Reading time: <span class="post-count">2 min</span></span>
+                        <span>Word count: <span class="post-count">3,221</span> / Reading time: <span class="post-count">12 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -396,78 +396,125 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Prediction-of-Prediction-of-off-target-activities-for-the-end-to-end-design-of-CRISPR-guide-RNAs"><a href="#Prediction-of-Prediction-of-off-target-activities-for-the-end-to-end-design-of-CRISPR-guide-RNAs" class="headerlink" title="Prediction of Prediction of off-target activities for the end-to-end design of CRISPR guide RNAs"></a>Prediction of Prediction of off-target activities for the end-to-end design of CRISPR guide RNAs</h1><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-<h2 id="ժҪ��"><a href="#ժҪ��" class="headerlink" title="ժҪ��"></a>ժҪ��</h2><h3 id="�Ѱ�ЧӦ�o��´��Z���༭��������䷢չ��ƿ����"><a href="#�Ѱ�ЧӦ�o��´��Z���༭��������䷢չ��ƿ����" class="headerlink" title="�Ѱ�ЧӦ�ɵ��´��Ż���༭��������䷢չ��ƿ����"></a>�Ѱ�ЧӦ�ɵ��´��Ż���༭��������䷢չ��ƿ����</h3><p>ʹ�û��������໥������<strong>����ѧϰģ��</strong>�ķ�����Ԥ���Ѱ�ЧӦ—����Elevation��  </p>
-<p><em>�Զ�����guide-target �Խ������֣�Ȼ��ͬʱ�����Ǻϲ�Ϊһ��Ψһ�����ܽ�ָ���������������һ�������������ڣ�ƽ���ͷǻguide֮������</em></p>
-<h2 id="������"><a href="#������" class="headerlink" title="������"></a>������</h2><p>�����Ѱ�Ӱ����õķ�ʽ�ǣ�֪������ʲôʱ�����ķ���������ƽ��on-targetЧ�ʵ���������һ��ָ���������ѰС�</p>
-<p>��������˻��ڻ���ѧϰ�ķ�����   </p>
-<p>���ڻ���ѧϰ��Ԥ�⽨ģ���������������������˽⵼���Ѱ�ЧӦ��gRNA-target���жԵ�ͳ�ƹ��ɣ��Լ����Ƕ�ϸ��������Ӱ�졣���ֽ�ģʹ���ܹ����ۺͿ��ٵ���ȫ������ˮƽ��ɸѡ������ǰ��gRNA���Ѱ�ЧӦ��  </p>
-<h2 id="���k�����"><a href="#���k�����" class="headerlink" title="���ķ�����"></a>���ķ�����</h2><p>�����Ѱ�Ԥ�⽨ģ��������Ҫ��������<br>1���˽�������Ѱ�������ܶ��ض���gRNA��˵�ж��Ծ�������Ծ�Գ�֮ΪgRNA-target���֡������ڹ�ע��������ض�������˵�Ǻ����õģ�<br>2����ø�����gRNA�������Ѱл��Ե�����÷֣��Ի�û����Ǳ��gRNA����  </p>
-<p>���Խ��Ѱ�Ԥ��ģ������ֽ��������Ҫ������  </p>
+<h1 id="Prediction-of-Prediction-of-off-target-activities-for-the-end-to-end-design-of-CRISPR-guide-RNAs"><a href="#Prediction-of-Prediction-of-off-target-activities-for-the-end-to-end-design-of-CRISPR-guide-RNAs" class="headerlink" title="Prediction of Prediction of off-target activities for the end-to-end design of CRISPR guide RNAs"></a>Prediction of Prediction of off-target activities for the end-to-end design of CRISPR guide RNAs</h1><h2 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h2><h3 id="脱靶效应可导致次优基因编辑结果，是其发展的瓶颈。"><a href="#脱靶效应可导致次优基因编辑结果，是其发展的瓶颈。" class="headerlink" title="脱靶效应可导致次优基因编辑结果，是其发展的瓶颈。"></a>脱靶效应可导致次优基因编辑结果，是其发展的瓶颈。</h3><p>使用基于两个相互关联的<strong>机器学习模型</strong>的方法来预测脱靶效应—叫做Elevation。  </p>
+<p><em>对独立的guide-target 对进行评分，然后同时将他们合并为一个唯一整体总结指导分数。还提出了一张评估方法用于：平衡活动和非活动guide之间的误差</em></p>
+<h2 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h2><p>减少脱靶影响最好的方式是：知道他们什么时候，在哪发生，并在平衡on-target效率的情况下设计一个指南来避免脱靶。</p>
+<p>本文提出了基于机器学习的方法：   </p>
+<p>基于机器学习的预测建模可以利用少量的数据来了解导致脱靶效应的gRNA-target序列对的统计规律，以及它们对细胞的总体影响。这种建模使得能够廉价和快速地在全基因组水平上筛选非试验前的gRNA的脱靶效应。  </p>
+<h2 id="本文方法："><a href="#本文方法：" class="headerlink" title="本文方法："></a>本文方法：</h2><p>对于脱靶预测建模有两种主要的用例：<br>1，了解给定的脱靶区域可能对特定的gRNA来说有多活跃，这个活跃性称之为gRNA-target评分。（对于关注基因组的特定区域来说是很有用的）<br>2，获得给定的gRNA的所有脱靶活性的总体得分，以获得基因的潜在gRNA排序。  </p>
+<p>可以将脱靶预测模型问题分解成三个主要的任务：  </p>
 <ul>
-<li>����������ȫ�������Ի��һ��gRNA��Ǳ�ڰе㡣  �����磬����������gRNA��ƥ��������У�������N��<em>Ŀ��λ��</em>�ĺ�������ƥ�䣬��Щλ�㽫���ڵڶ����Ժ�Żᱻ��Ϊ�Ѱл��ԣ�ʹ�û���ѧϰȥ�����л��Եĺ��޻��Ե�targets������һ��ֻ�ᴴ��һ��Ǳ�ڻ���λ��ļ���б�����</li>
-<li>��ÿһ��Ǳ�ڻĿ��������֣���gRNA-target�Է���һ����ֵ������ʾһ��gRNA-target��Ԥ���ж����Ѱ�ЧӦ��  </li>
-<li>�ԣ�2���еķ������кϲ����õ�һ���������Ѱп����ԣ���������gRNA��</li>
+<li>搜索并过滤全基因组以获得一个gRNA的潜在靶点。  （例如，基因组中与gRNA相匹配的区域中，可能有N个<em>目标位点</em>的核苷酸误匹配，这些位点将会在第二步以后才会被视为脱靶活性，使用机器学习去区分有活性的和无活性的targets。在这一步只会创建一个潜在活性位点的简短列表。）</li>
+<li>对每一个潜在活动目标进行评分，给gRNA-target对分配一个数值，来表示一个gRNA-target对预计有多少脱靶效应。  </li>
+<li>对（2）中的分数进行合并，得到一个单独的脱靶可能性，用于评估gRNA。</li>
 </ul>
-<p>�ڵ�һ���������͹��������У�����ʹ����ֵ������Cas-OFFinder, CRISPOR, CHOP-CHOP,<br>e-CRISPR�� CRISPR-DO, CROP-IT and COSMID�������㷨ʹ�õ������㷨��ͬ���Լ����Ų�ͬ��<em>����������</em>����  </p>
-<p><strong>���������ԣ�ȡ�����������ƥ��������������ԭ�ͼ�������ڻ���PAM������ʹ�õ������㷨��</strong>  </p>
-<p>�����У��ڵ�һ����ʹ�����Լ���ϵͳ��Ϊ�����͹��˲���—-<em>Elevation-search</em>��  </p>
-<p>�ڶ����͵�����ʹ���������—�ѰеĶ˶Զ˽�ģ����Ϊ<strong>Elevation</strong>  ��</p>
+<p>在第一步的搜索和过滤任务中，可以使用数值方法：Cas-OFFinder, CRISPOR, CHOP-CHOP,<br>e-CRISPR， CRISPR-DO, CROP-IT and COSMID。（所算法使用的搜索算法不同，以及有着不同的<em>搜索完整性</em>。）  </p>
+<p><strong>搜索完整性：取决于诸如最大不匹配数量，允许的原型间隔符相邻基序（PAM）和所使用的搜索算法。</strong>  </p>
+<p>本文中，在第一步中使用了自己的系统作为搜索和过滤操作—-<em>Elevation-search</em>。  </p>
+<p>第二步和第三步使用所提出的—脱靶的端对端建模方法为<strong>Elevation</strong>  ：</p>
 <ul>
-<li>����gRNA-target���֣�������һ��<strong>˫��ع�ģ��</strong>��<strong>Elevation-score</strong>����  <ul>
-<li>��һ��ѧϰԤ�ⵥ�����䣨target��Ԥ�ڵ�target֮�䣬���Ҳ���������PAM���Ѱл��ԡ�</li>
-<li>�ڶ���ģ��ѧϰ��ν����Ծ��ж�������gRNA-target�Եĵ�����ģ�͵�Ԥ����ϳɵ���gRNA-target�÷֡�-<strong>��combiner��ģ��</strong>��  </li>
+<li>对于gRNA-target评分：开发出一个<strong>双层回归模型</strong>（<strong>Elevation-score</strong>）：  <ul>
+<li>第一层学习预测单个错配（target与预期的target之间，因此也包括替代的PAM）脱靶活性。</li>
+<li>第二层模型学习如何将来自具有多个错配的gRNA-target对的单错配模型的预测组合成单个gRNA-target得分—-<strong>‘combiner’模型</strong>。  </li>
 </ul>
 </li>
-<li>Ϊ�˻���guide�ĵ������֣�<ul>
-<li>���Ƚ�gRNA-target����ģ��Ӧ����Ǳ�ڵ�target�б���ͨ��Elevation�����г�����</li>
-<li>Ȼ����ʹ��Elevation-����ģ�����Ե��������ֽ��л��ܡ�<br>*Elevationģ�ͣ�����ÿһ��Ǳ�ڵ�target�Ƿ�λ�ڻ����У���������Щ��������������ͨ�������Խ�ģ������<strong>boosted �ع���</strong>���໥���á�    </li>
+<li>为了汇总guide的单个评分：<ul>
+<li>首先将gRNA-target评分模型应用于潜在的target列表（通过Elevation搜索列出）。</li>
+<li>然后再使用Elevation-汇总模型来对单个的评分进行汇总。<br>*Elevation模型：考虑每一个潜在的target是否位于基因中，并允许这些特征和其他特征通过非线性建模方法（<strong>boosted 回归树</strong>）相互作用。    </li>
 </ul>
 </li>
 </ul>
-<p>��ͼΪElevation�Ѱ�Ԥ��ģ�͵Ŀ��ͼ��  </p>
+<p>下图为Elevation脱靶预测模型的框架图：  </p>
 <ul>
-<li>��һ��<em>a</em>��<ul>
-<li>����gRNA-target�Ա��ֽ�Ϊ����������ƥ��pseudo-pairs��{}$t_1,g_1$},{$t_2,g_2$})��ÿһ�Կ���ͨ����һ�㣨������ƥ�䣩ģ�����������$f$��</li>
-<li>Ȼ����Щ����������ͨ���ڶ���ģ�ͽ�����ϣ�����һ������������ƥ��ĵ���gRNA-target���֡�  </li>
+<li>第一层<em>a</em>：<ul>
+<li>首先gRNA-target对被分解为两个单个误匹配pseudo-pairs（{}$t_1,g_1$},{$t_2,g_2$})，每一对可以通过第一层（单个误匹配）模型来获得评分$f$。</li>
+<li>然后这些单个的评分通过第二层模型进行组合，生成一个解释所有误匹配的单个gRNA-target评分。  </li>
 </ul>
 </li>
-<li>�ڶ���<em>b</em>��  <ul>
-<li>����gRNA-target���ֵ�����ֲ���ͳ����Ϊ��������ͨ��ģ�����в���һ��gRNA�ľۺ����֡�</li>
+<li>第二层<em>b</em>：  <ul>
+<li>计算gRNA-target评分的输入分布的统计作为特征，并通过模型运行产生一个gRNA的聚合评分。</li>
 </ul>
 </li>
 </ul>
 <p><img src="/2018/06/27/paper-note/1.PNG" alt="scheme">  </p>
-<h3 id="����ѡ��"><a href="#����ѡ��" class="headerlink" title="����ѡ��"></a>����ѡ��</h3><p>���ڵ�һ�㣨������ƥ�䣩����ѡ��  </p>
+<h3 id="特征选择："><a href="#特征选择：" class="headerlink" title="特征选择："></a>特征选择：</h3><p>对于第一层（单个误匹配）特征选择：  </p>
 <ul>
-<li>��ƥ���λ��.</li>
-<li>��ƥ���nucleotide�������ᣩһ����(the nucleotide identity��.</li>
-<li>������������ƥ�������λ�ú�����.</li>
-<li>ͻ���Ƿ���һ��ת�����ߵ߻���  </li>
+<li>误匹配的位置.</li>
+<li>误匹配的nucleotide（核苷酸）一致性(the nucleotide identity）.</li>
+<li>单个特征中无匹配的联合位置和身份.</li>
+<li>突变是否是一个转换或者颠换。  </li>
 </ul>
-<p>�ڶ��㣨�����ƥ���������ģ�ͣ�</p>
+<p>第二层（多个误匹配组合器）模型：</p>
 <ul>
-<li>������Ҫ����ʾ��ƥ����������Լ���һ�㵥����ƥ��Ԥ����ܺ������������ģ�͡�  </li>
+<li>特征重要性显示误匹配的总数，以及第一层单个误匹配预测的总和在驱动了这个模型。  </li>
 </ul>
-<p><strong>�ۺϵ�������񣺻�ö���һ��gRNA�����������е���gRNA-target���ֵĵ����Ѱ��ܽ����֡�������Ľ����������gRNA����Ʒǳ����ã������û���Ҫɨ�������gRNA��������ԡ�</strong>   </p>
-<p><em>ϸ���Ļ���������ÿ��ϸ����DNA�������������ڶ����Ի��Ե�Ӱ������һ���ؼ������ϵ��Ѱл��ԡ�</em></p>
+<p><strong>聚合的最后任务：获得对于一个gRNA所给定的所有单个gRNA-target评分的单个脱靶总结评分。该任务的解决方案对于gRNA的设计非常有用，在于用户想要扫描大量的gRNA的总体活性。</strong>   </p>
+<p><em>细胞的活力部分由每个细胞的DNA断裂数决定。第二个对活性的影响是在一个关键基因上的脱靶活性。</em></p>
 <hr>
-<p>��Ⱦɫ�ʿ�����–�������Ⱦɫ��DNA�ں�С���ת¼���ӵȵ��������Ϻ󣬶����������ܷ��ٽ�ϵĿ��ų̶ȡ���һ������Ӧ��Ⱦɫ��ת¼��Ծ�̶ȡ����ⲿ�ֲ�̫�����Ӧ�����ڽ��ܺ�Ⱦɫ�ʶ�ʵ���Ӱ�죿��</p>
+<p>核染色质开放性–真核生物染色质DNA在核小体或转录因子等蛋白与其结合后，对其他蛋白能否再结合的开放程度。这一特征反应了染色质转录活跃程度。（这部分不太清楚，应该是在介绍核染色质对实验的影响？）</p>
 <hr>
-<h2 id="�о�������"><a href="#�о�������" class="headerlink" title="�о�������"></a>�о�������</h2><h3 id="���ݣ�"><a href="#���ݣ�" class="headerlink" title="���ݣ�"></a>���ݣ�</h3><ul>
-<li>ѵ����һ�㣬ʹ��CD33���ݡ�</li>
-<li>�����ڶ��㣬ʹ��������ƫ/ȫ���������ƥ�����ݼ���</li>
+<h2 id="研究方法："><a href="#研究方法：" class="headerlink" title="研究方法："></a>研究方法：</h2><h3 id="数据："><a href="#数据：" class="headerlink" title="数据："></a>数据：</h3><ul>
+<li>训练第一层，使用CD33数据。</li>
+<li>评估第二层，使用两个无偏/全基因组多误匹配数据集。</li>
 </ul>
-<h3 id="����gRNA�ж����ֵ�Ԥ��g�ͣ�"><a href="#����gRNA�ж����ֵ�Ԥ��g�ͣ�" class="headerlink" title="����gRNA�ж����ֵ�Ԥ��ģ�ͣ�"></a>����gRNA�ж����ֵ�Ԥ��ģ�ͣ�</h3><p>�Ƚ���CFDģ���������ļ��裬������Elevation����ģ���Լ�����ô�ڸ�������CFD������ġ�  </p>
-<h4 id="CFDg�ͣ�Ԥ���Ѱ�g�ͣ���"><a href="#CFDg�ͣ�Ԥ���Ѱ�g�ͣ���" class="headerlink" title="CFDģ�ͣ�Ԥ���Ѱ�ģ�ͣ���"></a>CFDģ�ͣ�Ԥ���Ѱ�ģ�ͣ���</h4><ul>
-<li>���ȼ���CD33������ÿ�ֵ����������͵�gRNA-target�Ի��Ե�<em>�۲�Ƶ�ʣ�observed frequency��</em>��</li>
-<li>Ȼ������ж����ƥ���gRNA-target�ԣ�CFDͨ������������Ƶ��<em>�˵�</em>һ�������ϡ�</li>
-</ul>
-<p>���õ��Ļ���ѧϰ�㷨��  </p>
+<h3 id="单个gRNA靶对评分的预测模型："><a href="#单个gRNA靶对评分的预测模型：" class="headerlink" title="单个gRNA靶对评分的预测模型："></a>单个gRNA靶对评分的预测模型：</h3><p>先介绍CFD模型所作出的假设，再描述Elevation评分模型以及他怎么在概念上与CFD相关联的。  </p>
+<h4 id="CFD模型（预测脱靶模型）："><a href="#CFD模型（预测脱靶模型）：" class="headerlink" title="CFD模型（预测脱靶模型）："></a>CFD模型（预测脱靶模型）：</h4><ul>
+<li><p>首先计算CD33数据中每种单个错配类型的gRNA-target对活性的<em>观测频率（observed frequency）</em>。</p>
+</li>
+<li><p>然后针对有多个误匹配的gRNA-target对，CFD通过将单个错配频率<em>乘到</em>一起进行组合。</p>
 <ul>
-<li>˫��ع�ģ��</li>
-<li>boosted�ع���</li>
+<li><p>例如，如果gRNA-target对在位置3处有A：G误匹配，在位置5处有T：C误匹配，并且在目标区域有“CG”的PAM存在，则CFD将会计算这个gRNA的脱靶评分为：$CFD \ score=P(active | A:G,3) \times P(active | T:C,5) \times P(active | CG)$  </p>
+<p>这些项每个都是根据CD33训练集数据中（只包含单个误匹配或备用PAM，但是不会同时包含两者）观察到的频率来计算的。    </p>
+</li>
+</ul>
+</li>
+<li><p>CFD作为<strong>朴素贝叶斯</strong>：可以把CFD算法解释为分类模型—朴素贝叶斯。  </p>
+<ul>
+<li><p>$Y=1$表示一个gRNA-target对有活性，$Y=0$表示这个对没有活性。</p>
+</li>
+<li><p>用$X_i$表示特征比如（T:G，5），$i$简单的指示了这些特征的枚举（即一个one-hot编码）。如果特征（误匹配）发生—-$X_i=1$，如果没有发生—-$X_i=0$。因此，在CD33数据集中（只有单个误匹配），一个特殊的gRNA-target对仅有一个$X_i=1$，其他的都为$X_i=0$。在这个定义下，可以重写针对一个gRNA-target对的CFD为：$CFD=\prod_{i\in{i | X_i=1}} \ P(Y=1 | X_i=1)$。  </p>
+<p>贝叶斯模型将会计算在给定的特征值下，一个gRNA-target对是有活性的概率为：</p>
+<p>$Naive Bayes \equiv P(Y=1 |{X_j})=\frac{P(Y=1)}{P({X_j})}) \prod_i P(X_i | Y=1)$      </p>
+<p>其中，$X_j$为所有特征$X_i$的集合。假设在gRNA是有活性的情况下，特征$X_i$是独立的使得：$P({X_j}|Y=1)=\prod_iP(X_i|Y=1)$。使用Bayes规则，可以重写朴素贝叶斯分类器为：</p>
+<p>$NaiveBayes\equiv P(Y=1|{X_j})=\frac{P(Y=1)}{P({X_j})}\prod_iP(Y=1|X_i)\frac{P(X_i)}{P(Y=1)}=\frac{1}{P({X_j})}\prod_iP(Y=1|X_i)P(X_i)$  </p>
+<p>如果做出两个更近一步的假设，会发现朴素贝叶斯分类器恰好与CFD匹配。<em>第一个假设</em>假设特征略微独立，也就是说：$\prod_iP(X_i)=P({X_j})$，在这种情况下，朴素贝叶斯可以简化为：  </p>
+<p>$NaiveBayes_{feat.ind.}=\prod_iP(Y=1|X_i)$    </p>
+<p>在Elevation-score中也可以做出同样的假设。如果假设$P(Y=1|X_i=0)=1$，那么CFD和朴素贝叶斯将会是独立的。关键的问题是询问训练数据集的那些属性能够推广到模型可能应用的不可见数据集中。特别地，可以有理由的假设$P(Y=1|X_i=1)$是一个可以推广到其他数据集的quality。这个quality反映了我们观察到一种特定类型的不匹配的情况下gRNA的活跃可能性。因此他与在训练与测试集中不匹配类型的分布无关。定义了在没有观察到特征的情况下，gRNA是活跃的可能性。</p>
+<p>CFD假设为$P(Y=1|X_i=0)=1$。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Elevation-score作为两层堆栈回归："><a href="#Elevation-score作为两层堆栈回归：" class="headerlink" title="Elevation-score作为两层堆栈回归："></a>Elevation-score作为两层堆栈回归：</h4><p>  可以从CFD中推广出三种主要的方式：  </p>
+<ul>
+<li>使用回归代替分类器。</li>
+<li>增大了特征空间。</li>
+<li><p>组合使用机器学习方法取代了乘法结合概率的先验方法。  </p>
+<p>模型值执行前两步，具体方法为：</p>
+</li>
+<li><p>首先将CD33LFC数值转换为位于范围内。他们可以被解释成概率，再使用核密度估计器将每个LFC变换成核密度估计中的LFC的累积密度。在这里使用<strong>高斯核</strong>并通过<strong>tenfold cross-validation（十倍交叉验证）</strong>来选择频率长度。</p>
+</li>
+<li><p>Elevation-score被分为两层：</p>
+<ul>
+<li>第一层对gRNA-target对中的单个误匹配进行预测（<em>第一层单个误匹配回归模型</em>）$p(y|{X_j})$：<ul>
+<li>使用<strong>boosted regression trees（boosted回归树）</strong>（使用scikit-learn库的默认配置）在CD33数据集上执行。由于每个gRNA-target对在这些数据上只有一个$X_i=1$，也可以使用<strong>线性回归模型</strong>来进行预测。但是希望gRNA-target对更加丰富。因此希望这些特征能够在一个<strong>非线性方法</strong>中相互影响。特别地，会使用特征的“解耦”版本，比如编码形式之一‘A:G’—-这是one-hot。还有其他位置的整数特征。CFD是将这些组合在一起作为一个单独的特征。还包括突变是否是颠倒或过渡。使用这些改进的并组合每一个误匹配的模型，正如CFD所作的将这些值相乘一样—-Elevation-naive。</li>
+</ul>
+</li>
+<li>第二层组合这些多个误匹配：  <ul>
+<li>我们将Elevation-score的第二层作为组合器，因为它学习如何以更细致的方式将来自单个不匹配模型的预测结合起来，而不是简单地将它们相乘，从而允许减轻某些陈述的假设。 使用<strong>数据驱动及其学习方法</strong>来调整如何去组合他们。使用第一层boosted回归树模型J次来对J个单个gRNA-target对进行预测（也就是说，J个特征有着$X_j=1$），产生J个预测$\hat{y}_i \in [0,1]$(每一个特征有$X_j=1$,并且针对剩余的K个有着的$X_k=0$特征设置$\hat{y}_k =1$)。每一个gRNA-target对有$T=J+K=21$个boosted回归树预测。（20个可能的误匹配位置和一个PAM）作为特征。这21个特征的$log$:${log(\hat{y_t})}$以及他们的总和，乘积和J（误匹配数和PAM数）作为第二层模型<strong>L1正则线性回归</strong>模型的输入。</li>
+<li>最后，因为我们最终想要的是对gRNA-target对进仓库有效的可能性的预测，我们还要对来自<strong>L1回归组合器模型</strong>的输出应用了一个最终变换。通过一个<strong>校准模型</strong>来转换输出。  <ul>
+<li>校准模型使用<strong>逻辑回归模型</strong>使用Elevation-naive训练得到的预测作为输入来估计$P(active|GUIDE \ - \ seq \ normalized \ counts)$，然后使用相对应的二值观测活性（LFC&gt;1)作为目标变量。—–只有回归的表现会影响这个转换，同gRNA-target评分无关。（即使是很简单的线性变换也可能会改变聚合分数。）  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Elevation-聚合："><a href="#Elevation-聚合：" class="headerlink" title="Elevation-聚合："></a>Elevation-聚合：</h4><p>Elevation-score值提供了选择具有最小期望脱靶活性的gRNA的初始条件。<em>最终的结果需要将多个值聚合成一个以进行排序。</em> </p>
+</li>
+<li><p>开发一个基于<strong>梯度boosted回归树</strong>的模型来执行Elevation-aggregate。超参数的设置选择通过使用一个<em>随机搜索</em>的<em>交叉验证</em>方法：$losses ∈ {least \ squares; least \ absolute \ deviation; Huber}$,$learning \ rates \in [1.0 × 10−6, 1.0]$ 在在对数空间中等间隔的100点,$the \ number \ of \ estimators \in [20, 50, 80, 100, 200, 300, 400, 500]$, 最大树深范围为 1 到 7, 最小分割样本数量 = [2, 3, 4], $splitting \ criterion \in  [Friedman \ mean-squared \ error, mean-squared \ error, mean absolute \ error]$.</p>
+</li>
 </ul>
 
     </article>
@@ -476,7 +523,7 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者: <a href="http://soufal.cn">Soufal</a>
             <p>原文链接: <a href="http://soufal.cn/2018/06/27/paper-note/">http://soufal.cn/2018/06/27/paper-note/</a>
-            <p>发表日期: <a href="http://soufal.cn/2018/06/27/paper-note/">June 27th 2018, 11:25:15 am</a>
+            <p>发表日期: <a href="http://soufal.cn/2018/06/27/paper-note/">六月 27日 2018, 11:25:15 上午</a>
             <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -594,7 +641,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Prediction-of-Prediction-of-off-target-activities-for-the-end-to-end-design-of-CRISPR-guide-RNAs"><span class="toc-number">1.</span> <span class="toc-text">Prediction of Prediction of off-target activities for the end-to-end design of CRISPR guide RNAs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ժҪ��"><span class="toc-number">1.1.</span> <span class="toc-text">ժҪ��</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#�Ѱ�ЧӦ�o��´��Z���༭��������䷢չ��ƿ����"><span class="toc-number">1.1.1.</span> <span class="toc-text">�Ѱ�ЧӦ�ɵ��´��Ż���༭��������䷢չ��ƿ����</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#������"><span class="toc-number">1.2.</span> <span class="toc-text">������</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#���k�����"><span class="toc-number">1.3.</span> <span class="toc-text">���ķ�����</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#����ѡ��"><span class="toc-number">1.3.1.</span> <span class="toc-text">����ѡ��</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#�о�������"><span class="toc-number">1.4.</span> <span class="toc-text">�о�������</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#���ݣ�"><span class="toc-number">1.4.1.</span> <span class="toc-text">���ݣ�</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#����gRNA�ж����ֵ�Ԥ��g�ͣ�"><span class="toc-number">1.4.2.</span> <span class="toc-text">����gRNA�ж����ֵ�Ԥ��ģ�ͣ�</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CFDg�ͣ�Ԥ���Ѱ�g�ͣ���"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">CFDģ�ͣ�Ԥ���Ѱ�ģ�ͣ���</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Prediction-of-Prediction-of-off-target-activities-for-the-end-to-end-design-of-CRISPR-guide-RNAs"><span class="toc-number">1.</span> <span class="toc-text">Prediction of Prediction of off-target activities for the end-to-end design of CRISPR guide RNAs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要："><span class="toc-number">1.1.</span> <span class="toc-text">摘要：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#脱靶效应可导致次优基因编辑结果，是其发展的瓶颈。"><span class="toc-number">1.1.1.</span> <span class="toc-text">脱靶效应可导致次优基因编辑结果，是其发展的瓶颈。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#背景："><span class="toc-number">1.2.</span> <span class="toc-text">背景：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本文方法："><span class="toc-number">1.3.</span> <span class="toc-text">本文方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特征选择："><span class="toc-number">1.3.1.</span> <span class="toc-text">特征选择：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#研究方法："><span class="toc-number">1.4.</span> <span class="toc-text">研究方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据："><span class="toc-number">1.4.1.</span> <span class="toc-text">数据：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单个gRNA靶对评分的预测模型："><span class="toc-number">1.4.2.</span> <span class="toc-text">单个gRNA靶对评分的预测模型：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CFD模型（预测脱靶模型）："><span class="toc-number">1.4.2.1.</span> <span class="toc-text">CFD模型（预测脱靶模型）：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Elevation-score作为两层堆栈回归："><span class="toc-number">1.4.2.2.</span> <span class="toc-text">Elevation-score作为两层堆栈回归：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Elevation-聚合："><span class="toc-number">1.4.2.3.</span> <span class="toc-text">Elevation-聚合：</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
