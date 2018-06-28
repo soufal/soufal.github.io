@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+    <!-- title -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Soufal">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Soufal">
+    <meta name="keywords" content="行寂静行 | Soufal">
+    <meta name="description" content="Soufal's Blog">
+    <meta name="Cache-Control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Git笔记 · soufal&#39;s Home</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s 1;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= /css/style.css?v=20180604 as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= /css/mobile.css?v=20180604 media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >soufal&#39;s Home.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Git笔记</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>soufal's Home.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style=
+
+
+
+
+
+
+
+
+height:50vh;
+
+>
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Git笔记
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "note，git">note，git</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count">2,126</span> / Reading time: <span class="post-count">8 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/06/16</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Git分布式版本控制系统："><a href="#Git分布式版本控制系统：" class="headerlink" title="Git分布式版本控制系统："></a>Git分布式版本控制系统：</h1><p>学习<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b00" target="_blank" rel="noopener">廖雪峰的git教程</a>  笔记( 图片转自<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b00" target="_blank" rel="noopener">廖雪峰</a> ）。</p>
+<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><ul>
+<li>随时掌握工作区的状态，使用<code>git status</code>命令。</li>
+<li>如果<code>git status</code> 告诉你有文件被修改过，可以用<code>git diff</code> 查看修改内容。</li>
+<li>在<code>git</code>中进行修改后可以保存一个快照，称为<code>commit</code>，如果文件被删除，可以通过最近一个<code>commit</code>恢复。</li>
+<li>使用<code>git log</code>命令来查看历史记录。 <ul>
+<li><code>--pretty=oneline</code>参数简要输出相关信息。</li>
+</ul>
+</li>
+<li>回退到上一个版本：<ul>
+<li>在<code>git</code>中，<code>HEAD</code>表示当前版本，上一个版本就是<code>HEAD^</code>,上上个版本就是<code>HEAD^^</code>。（上100个版本<code>HEAD~100</code>。</li>
+<li>把当前版本回退分层上一个版本，使用<code>git reset --hard &lt;HEAD^&gt;</code>命令。</li>
+<li>回到未来的版本，使用<code>git reset --hard &lt;commit ID&gt;</code>(前提是命令行窗口未关闭，版本号可以写前几位即可）</li>
+<li><code>git reflog</code>可以记录操作的每一条命令。</li>
+</ul>
+</li>
+</ul>
+<h3 id="二、工作区和暂存区"><a href="#二、工作区和暂存区" class="headerlink" title="二、工作区和暂存区"></a>二、工作区和暂存区</h3><ul>
+<li>工作区（working directory）<br>创建的文件夹就是一个工作区。</li>
+<li>版本库（Repository）：<br>工作区中隐藏的目录<code>.git</code>是Git的版本库。<br>版本库中存有（隐藏目录）：<ul>
+<li>stage（index）暂存区</li>
+<li>Git自动创建的第一个分支：<code>master</code>.</li>
+<li>指向<code>master</code>的一个指针<code>HEAD</code>。</li>
+<li>在往Git版本库中添加文件时，分两步执行：<ul>
+<li>1、用<code>git add</code>把文件加进去，实际上就是把文件修改添加到暂存区；</li>
+<li>2、用<code>git commit</code>提交更改，实际上就是把暂存处的所有内容提交到当前分支<code>master</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>需要提交的文件修改后通通放到暂存区，然后，一次性提交暂存区的所有修改。</strong></p>
+<h3 id="三、管理修改"><a href="#三、管理修改" class="headerlink" title="三、管理修改"></a>三、管理修改</h3><ul>
+<li><p><code>Git</code>跟踪并管理的是修改，而非文件。<br>每次修改文件过后，如果不用<code>git add</code>将文件提交到暂存区，同样的文件也不会加入到<code>commit</code>中。  </p>
+<h4 id="1、撤销更改"><a href="#1、撤销更改" class="headerlink" title="1、撤销更改"></a>1、撤销更改</h4><p>在<code>git add</code> 之前发现文件修改有错，可以使用<code>git checkout -- [filename]</code>丢弃<em>工作区</em>的修改。<br><strong>命令<code>git checkout -- readme.txt</code>有两种情况：<br>1、文件<code>readme.txt</code>自修改后还没有被放到暂存区，撤销修改就回到和版本库一模一样的状态。（还未使用<code>git add</code>）<br>2、文件已经被添加到暂存区后，又做了修改，撤销修改就回到添加到暂存区后的状态。（已经使用了<code>git add</code>后对文件进行了修改）<br>也就是让文件回到最近一次<code>git commit</code>或<code>git add</code>状态</strong><br><em>如果<code>git checkout -- file</code>命令没有使用<code>--</code>，就会变成“切换到另一个分支”的命令。</em>  </p>
+</li>
+<li><p>在修改文件并使用了<code>git add</code>将文件放到了暂存区后，可以使用<code>git reset HEAD &lt;file&gt;</code>命令可以把<em>暂存区</em>的修改撤销掉（unstage），重新将文件放回工作区。</p>
+</li>
+</ul>
+<h3 id="四、删除文件"><a href="#四、删除文件" class="headerlink" title="四、删除文件"></a>四、删除文件</h3><p>当需要删除已给文件时，在工作区将文件删除后，需要从版本库删除文件<code>git rm &lt;file&gt;</code>。然后使用<code>git commit -m &quot;&quot;</code>进行提交，这样工作区和版本库都将该文件删除了。<br>如果在工作区中删错了文件，可以使用<code>git checkout -- &lt;file&gt;</code>将误删的文件恢复到最新版本<em>实际上该命令是用版本库里的版本替换工作区的版本</em>。</p>
+<h3 id="五、远程仓库"><a href="#五、远程仓库" class="headerlink" title="五、远程仓库"></a>五、远程仓库</h3><ul>
+<li>关联<code>github</code>：  </li>
+</ul>
+<ol>
+<li>创建SSH Key：使用<code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code>创建秘钥。</li>
+<li>进入<code>.shh</code>文件夹复制<code>id_rsa.pub</code>公钥中的内容到Github中的<code>Add SSH Key</code>中。<br><em>如果有多台电脑，则可以在每一台电脑中生成一个新的Key并添加到github中。</em></li>
+</ol>
+<ul>
+<li>添加远程库：  <ul>
+<li>在github上新建一个仓库后，同本地已有的仓库关联，然后把本地仓库推送到Github库：使用<code>git remote add origin https://github.com/soufal/my_git.git</code>，这样添加后的远程库的名字就为<code>origin</code>，是git的默认叫法。</li>
+</ul>
+</li>
+<li>推送：<ul>
+<li>使用<code>git push -u origin master</code>把本地库的所有内容推送到远程库。<br><strong>这里使用加<code>-u</code>的命令是因为第一次推送<code>master</code>分支时，Git不但会吧本地的<code>master</code>分支内容推送到远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或拉取时就可以简化命令了。</strong></li>
+</ul>
+</li>
+<li>从远程库克隆<ul>
+<li>可以现在Github上创建一个远程库<code>new</code>，再从远程库克隆到本地。使用<code>git clone https://github.com/soufal/new.git</code>或者<code>git clone git@github.com:soufal/new.git</code>。</li>
+<li>两者的不同在于：前者使用的是<code>https</code>协议，速度较慢，每次推送都需要输入口令。后者使用的是<code>SSH</code>协议，其速度较快。</li>
+<li><h3 id="六、分支管理"><a href="#六、分支管理" class="headerlink" title="六、分支管理"></a>六、分支管理</h3>可以创建一个属于自己的分支，其他人看不到，还可以在原来的分支上继续工作，自己可以在自己的分支上继续工作。需要提交后再提交，可以一次性合并到原来的分支上。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1、创建于合并分支："><a href="#1、创建于合并分支：" class="headerlink" title="1、创建于合并分支："></a>1、创建于合并分支：</h4><p>在<code>Git</code>中，每一次的提交，Git都会把这些提交串成一条时间线，这条时间线就是一个分支。一直在使用的默认分支叫做主分支。即<code>master</code>分支。<code>HEAD</code>严格来说是指向<code>master</code>的，<code>master</code>才是指向提交的。所以可以说：<em><code>HEAD</code>指向的就是当前分支。</em><br>一开始，<code>master</code>分支就是一条线，Git用<code>master</code>指向最新的提交，再用<code>HEAD</code>指向<code>master</code>，就可以确定当前分支以及当前分支的提交点：<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849087937492135fbf4bbd24dfcbc18349a8a59d36d000/0" alt="image1"></p>
+<p>当创建新的分支时<code>dev</code>时，git新建一个指针叫做<code>dev</code>，指向<code>master</code>相同的提交，再把<code>HEAD</code>指向<code>dev</code>，就表示当前分支在<code>dev</code>上：<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908811773187a597e2d844eefb11f5cf5d56135ca000/0" alt="image2"></p>
+<p>因此可以看出git创建一个分支很快，只需要增加一个指标<code>dev</code>，并修改<code>HEAD</code>的指向即可。修改过后，对工作区的修改和提交就只是针对<code>dev</code>分支了，而<code>master</code>指针不变：</p>
+<p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849088235627813efe7649b4f008900e5365bb72323000/0" alt="image3"></p>
+<p>如果在<code>dev</code>上的工作完成了，就可以将<code>dev</code>合并回<code>master</code>上。可以直接将<code>master</code>指向<code>dev</code>的当前提交（正如最开始创建分支一样），就完成了合并：</p>
+<p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/00138490883510324231a837e5d4aee844d3e4692ba50f5000/0" alt="image4"></p>
+<p>合并同样也很快，也只需要改指针。<br>合并完成后，可以删除<code>dev</code>分支，也就是把<code>dev</code>指针删除，删除后就值剩下一个<code>master</code>分支。<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908867187c83ca970bf0f46efa19badad99c40235000/0" alt="image"></p>
+<h4 id="2、相关命令："><a href="#2、相关命令：" class="headerlink" title="2、相关命令："></a>2、相关命令：</h4><ul>
+<li>创建<code>dev</code>：<br><code>git checkout -b dev</code><br><code>git checkout</code>命令加上<code>-b</code>参数表示创建并切换。相当于:  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch dev  </span><br><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以使用<code>git branch</code>查看当前分支。<strong>会列出所有的分支，当前分支前有一个<code>*</code></strong><br>当完成工作提交后，通过<code>git checkout master</code>命令返回<code>master</code>分支。<br>然后使用<code>git merge dev</code>把<code>dev</code>上的工作合并到<code>master</code>上。<br><strong>该指令用于合并指定分支到当前分支。</strong>  </li>
+<li>合并完成后使用<code>git branch -d dev</code>删除<code>dev</code>分支。  </li>
+<li>使用<code>git log</code>可以查看分支合并情况。</li>
+<li>使用<code>git log --graph</code>乐意查看分支合并图。</li>
+</ul>
+<h4 id="3、分支管理策略"><a href="#3、分支管理策略" class="headerlink" title="3、分支管理策略"></a>3、分支管理策略</h4><ul>
+<li>合并分支时，Git会用<code>Fast forward</code>模式，在这种模式下，删除分支后，会丢掉分支信息。  </li>
+<li>使用<code>--no-ff</code>方式的<code>git merge</code>会强制禁用<code>Fast forward</code>，这样git会在<code>merge</code>时生成一个新的<code>commit</code>，这样可以从分支历史上看出分支信息。 （<em>创建新的<code>commit</code>可以用过加上<code>-m</code>参数实现</em>） </li>
+</ul>
+<hr>
+<p>在实际开发中，管理分支的几种原则：</p>
+<ul>
+<li><code>master</code>分支应该是稳定的，也是仅仅用来发布新版本，平时不在其上进行工作。</li>
+<li>工作都在<code>dev</code>分支上，因为<code>dev</code>是不稳定的。</li>
+<li>可以在<code>dev</code>上再创建新的分支，和别人协同工作，最后再合并到<code>dev</code>上。如下图所示：<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384909239390d355eb07d9d64305b6322aaf4edac1e3000/0" alt="image5"></li>
+</ul>
+<hr>
+<ul>
+<li>Bug分支：<br>Git提供了一个<code>stash</code>功能，可以把当前工作现场“储存”起来，等当前临时工作做完后再恢复现场继续工作：  <code>git stash</code>。<ul>
+<li>确定bug需要在哪个分支上修复，就在那个分支上创建新的临时分支。</li>
+<li>恢复工作区：使用<code>git stash list</code>查看之前隐藏的工作区。恢复方法有两种:<ul>
+<li>使用<code>git stash apply</code>恢复，但是恢复后，stash的内容并不删除，需要再使用<code>git stash pop</code>来删除。</li>
+<li>使用<code>git stash pop</code>，恢复的同时会把stash的内容也删了。</li>
+<li>可以多次<code>stash</code>，使用<code>git stash list</code>查看，然后恢复指定的stash。<br>使用<code>git stash apply stash@ {id}</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者: <a href="http://soufal.cn">Soufal</a>
+            <p>原文链接: <a href="http://soufal.cn/2018/06/16/Git笔记/">http://soufal.cn/2018/06/16/Git笔记/</a>
+            <p>发表日期: <a href="http://soufal.cn/2018/06/16/Git笔记/">June 16th 2018, 2:13:42 pm</a>
+            <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2018/06/27/paper-note/" title= paper note >
+                    <div class="nextTitle">paper note</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/06/13/第一篇/" title= 第一篇 >
+                    <div class="prevTitle">第一篇</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC和WAP自适应版-->
+
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:wyf3510@gmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/soufal" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git分布式版本控制系统："><span class="toc-number">1.</span> <span class="toc-text">Git分布式版本控制系统：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、简介"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、工作区和暂存区"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、工作区和暂存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、管理修改"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、管理修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、撤销更改"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1、撤销更改</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、删除文件"><span class="toc-number">1.0.4.</span> <span class="toc-text">四、删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、远程仓库"><span class="toc-number">1.0.5.</span> <span class="toc-text">五、远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、分支管理"><span class="toc-number">1.0.6.</span> <span class="toc-text">六、分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、创建于合并分支："><span class="toc-number">1.0.6.1.</span> <span class="toc-text">1、创建于合并分支：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、相关命令："><span class="toc-number">1.0.6.2.</span> <span class="toc-text">2、相关命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、分支管理策略"><span class="toc-number">1.0.6.3.</span> <span class="toc-text">3、分支管理策略</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 3
+        <!-- search  -->
+        </div>
+            <div class="site-search popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/27</span><a class="archive-post-title" href= "/2018/06/27/paper-note/" >paper note</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/16</span><a class="archive-post-title" href= "/2018/06/16/Git笔记/" >Git笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/13</span><a class="archive-post-title" href= "/2018/06/13/第一篇/" >第一篇</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="note"><span class="iconfont-archer">&#xe606;</span>note</span>
+    
+        <span class="sidebar-tag-name" data-tags="note，git"><span class="iconfont-archer">&#xe606;</span>note，git</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Soufal"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
