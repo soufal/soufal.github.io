@@ -552,7 +552,7 @@ Elevation模型：考虑每一个潜在的target是否位于基因中，并允�
         <div class="license-wrapper">
             <p>原文作者: <a href="http://soufal.cn">Soufal</a>
             <p>原文链接: <a href="http://soufal.cn/2018/06/27/paper-note/">http://soufal.cn/2018/06/27/paper-note/</a>
-            <p>发表日期: <a href="http://soufal.cn/2018/06/27/paper-note/">六月 27日 2018, 11:25:15 上午</a>
+            <p>发表日期: <a href="http://soufal.cn/2018/06/27/paper-note/">June 27th 2018, 11:25:15 am</a>
             <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -820,7 +820,22 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
