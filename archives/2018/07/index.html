@@ -345,10 +345,12 @@
                 <span>计算机中数的表示</span>
         </a>
         <div class="abstract-content">
-            计算机中数的表示1、计算机中用二进制计数：计算机是由数字电路搭成的，而数字电路只有1和0两种状态。所以对于计算机来说，使用二进制（Binary）是最自然的方式。二进制的一位数字叫做一个位（Bit），逢二进一，事实上计算机采用逻辑电路计算两个bit之间的加法。下图为一位全加器（1-bit FullAdder），电压值只有0和1两种状态，输入到门电路的输入端，经过相应的逻辑运算后通过输出端输出结果电压值。各种门电路对应着不同的逻辑运算。
+             计算机中数的表示
+ 1、计算机中用二进制计数：
+计算机是由数字电路搭成的，而数字电路只有1和0两种状态。所以对于计算机来说，使用**二进制（Binary）**是最自然的方式。二进制的一位数字叫做一个位（Bit），逢二进一，事实上计算机采用逻辑电路计算两个bit之间的加法。下图为一位全加器（1-bit FullAdder），电压值只有0和1两种状态，输入到门电路的输入端，经过相应的逻辑运算后通过输出端输出结果电压值。各种门电路对应着不同的逻辑运算。
 
-该图中主要使用了三种逻辑运算来实现两个bit的加法，分别为XOR（异或—相同为0，不相同为1）、AND（与）和OR（或）。  
-左上角为两个输入A和B，$...
+该图中主要使用了三种逻辑运算来实现两个bit的加法，分别为XOR（异或–相同为0，不相同为1）、AND（与）和OR（或）。
+左上角为两个输...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -371,20 +373,23 @@
                 <span>机器学习note</span>
         </a>
         <div class="abstract-content">
-            机器学习note:读《机器学习》——Peter Flach  笔记。
-零 绪论 机器学习概述：1、机器学习的一般性定义：机器学习是对依据经验提升自身性能或丰富自身知识的各种算法和系统的系统性研究。  
+             机器学习note:
+读《机器学习》----Peter Flach  笔记。
+ 零 绪论 机器学习概述：
+1、机器学习的一般性定义：机器学习是对依据经验提升自身性能或丰富自身知识的各种算法和系统的系统性研究。
 
-针对以上概念，以垃圾邮件分类为例：  
+针对以上概念，以垃圾邮件分类为例：
+
 “经验”对应一组正确标注的训练数据。
-“性能”对应于识别垃圾邮件的能力。  
+“性能”对应于识别垃圾邮件的能力。
 
 
-同时，在某些任务中，机器学习的目的可能不是针对特定任务取得性能提升，而是在整体上使知识得到提升。  
-在训练数据上取得优异性能只是手段，而非目的。———否则就会因为一味追求在训练数据上的性能，而造成—-”过拟合（overfitting）“。    
+同时，在某些任务中，机器学习的目的可能不是针对特定任务取得性能提升，而是在整体上使知识得到提升。
+在训练数据上取得优异性能只是手段，而非目的。------否则就会因为一味追求在训练数据上的性能，而造成—”过拟合（overfitting）“。
 
 
 
-数学背景1：...
+ 数学背景1：概率...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -615,7 +620,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_以可视化的形式打印直方图/" >LinuxC编程一站式学习中_以可视化形式打印菱形</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
         </li>
     
     
@@ -625,12 +630,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_以可视化的形式打印直方图/" >LinuxC编程一站式学习中_以可视化形式打印菱形</a>
         </li>
     
     
@@ -727,7 +732,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 

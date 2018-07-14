@@ -345,18 +345,21 @@
                 <span>Git笔记</span>
         </a>
         <div class="abstract-content">
-            Git分布式版本控制系统：学习廖雪峰的git教程  笔记( 图片转自廖雪峰 ）。
-一、简介
+             Git分布式版本控制系统：
+学习廖雪峰的git教程  笔记( 图片转自廖雪峰 ）。
+ 一、简介
+
 随时掌握工作区的状态，使用git status命令。
 如果git status 告诉你有文件被修改过，可以用git diff 查看修改内容。
 在git中进行修改后可以保存一个快照，称为commit，如果文件被删除，可以通过最近一个commit恢复。
-使用git log命令来查看历史记录。 
+使用git log命令来查看历史记录。
+
 --pretty=oneline参数简要输出相关信息。
 
 
 回退到上一个版本：
-在git中，HEAD表示当前版本，上一个版本就是HEAD^,上上个版本就是HEAD^^。（上100个版本HEAD~100。
-把当前...
+
+在git中，HEAD表示当前版本，上一个版本就是HEAD^,上上个版本就是HEAD^^。（上100个版本HEAD~100...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -587,7 +590,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_以可视化的形式打印直方图/" >LinuxC编程一站式学习中_以可视化形式打印菱形</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
         </li>
     
     
@@ -597,12 +600,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_以可视化的形式打印直方图/" >LinuxC编程一站式学习中_以可视化形式打印菱形</a>
         </li>
     
     
@@ -699,7 +702,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
