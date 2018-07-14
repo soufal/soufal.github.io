@@ -397,16 +397,9 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="linux-cc编程一站式学习中选择排序"><a class="markdownIt-Anchor" href="#linux-cc编程一站式学习中选择排序"></a> Linux C/C++编程一站式学习中选择排序</h1>
-<h2 id="选择排序"><a class="markdownIt-Anchor" href="#选择排序"></a> 选择排序</h2>
-<p>实现选择排序（Selection Sort）算法：第一次从数组 a[0…LEN-1] 中找出最小元素交换到 a[0] 的位置，第二次从数组 a[1…LEN-1] 中找出最小元素交换到 a[1] 的位置，依此类推。排序过程举例如下:</p>
-<p>10, 5, 2, 4, 7<br>
-2, 5, 10, 4, 7<br>
-2, 4, 10, 5, 7<br>
-2, 4, 5, 10, 7<br>
-2, 4, 5, 7, 10</p>
-<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN 5</span></span><br><span class="line"><span class="keyword">int</span> a[LEN] = &#123;<span class="number">10</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">7</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selection_sort</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,min,temp;</span><br><span class="line">	<span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; LEN; j++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d, %d, %d, %d,%d\n"</span>,a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>], a[<span class="number">4</span>]);</span><br><span class="line">		min = a[j];</span><br><span class="line">		<span class="keyword">for</span>(i = j+<span class="number">1</span>;i &lt; LEN; i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>( min &gt;= a[i])</span><br><span class="line">				&#123;min = a[i];</span><br><span class="line">				temp = i;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,temp);</span><br><span class="line">		a[temp] = a[j];</span><br><span class="line">		a[j] = min;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line"><span class="comment">//	printf("%d, %d, %d, %d,%d\n",a[0],a[1],a[2],a[3],a[4]);</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	selection_sort();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="Linux-C-C-编程一站式学习中选择排序"><a href="#Linux-C-C-编程一站式学习中选择排序" class="headerlink" title="Linux C/C++编程一站式学习中选择排序"></a>Linux C/C++编程一站式学习中选择排序</h1><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>实现选择排序（Selection Sort）算法：第一次从数组 a[0..LEN-1] 中找出最小元素交换到 a[0] 的位置，第二次从数组 a[1..LEN-1] 中找出最小元素交换到 a[1] 的位置，依此类推。排序过程举例如下:</p>
+<p>10, 5, 2, 4, 7<br>2, 5, 10, 4, 7<br>2, 4, 10, 5, 7<br>2, 4, 5, 10, 7<br>2, 4, 5, 7, 10</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN 5</span></span><br><span class="line"><span class="keyword">int</span> a[LEN] = &#123;<span class="number">10</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">7</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selection_sort</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,min,temp;</span><br><span class="line">	<span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; LEN; j++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d, %d, %d, %d,%d\n"</span>,a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>], a[<span class="number">4</span>]);</span><br><span class="line">		min = a[j];</span><br><span class="line">		<span class="keyword">for</span>(i = j+<span class="number">1</span>;i &lt; LEN; i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>( min &gt;= a[i])</span><br><span class="line">				&#123;min = a[i];</span><br><span class="line">				temp = i;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,temp);</span><br><span class="line">		a[temp] = a[j];</span><br><span class="line">		a[j] = min;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line"><span class="comment">//	printf("%d, %d, %d, %d,%d\n",a[0],a[1],a[2],a[3],a[4]);</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	selection_sort();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20180109212507832?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTU2MjEyMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="结果截图"></p>
 
     </article>
@@ -432,8 +425,8 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/06/29/LinuxC编程一站式学习中输出菱形/" title= LinuxC编程一站式学习中_输出菱形 >
-                    <div class="prevTitle">LinuxC编程一站式学习中_输出菱形</div>
+                <a href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" title= LinuxC编程一站式学习中_折半查找 >
+                    <div class="prevTitle">LinuxC编程一站式学习中_折半查找</div>
                 </a>
             
         </li>
@@ -538,7 +531,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux-cc编程一站式学习中选择排序"><span class="toc-number">1.</span> <span class="toc-text"> Linux C/C++编程一站式学习中选择排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择排序"><span class="toc-number">1.1.</span> <span class="toc-text"> 选择排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-C-C-编程一站式学习中选择排序"><span class="toc-number">1.</span> <span class="toc-text">Linux C/C++编程一站式学习中选择排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择排序"><span class="toc-number">1.1.</span> <span class="toc-text">选择排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.1.1.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -551,6 +544,12 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
     
     
     
@@ -676,17 +675,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_以可视化的形式打印直方图/" >LinuxC编程一站式学习中_以可视化形式打印菱形</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >LinuxC编程一站式学习中_输出菱形</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
         </li>
     
     
@@ -716,9 +715,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="LinuxC code"><span class="iconfont-archer">&#xe606;</span>LinuxC code</span>
     
-        <span class="sidebar-tag-name" data-tags="ML note"><span class="iconfont-archer">&#xe606;</span>ML note</span>
-    
         <span class="sidebar-tag-name" data-tags="note"><span class="iconfont-archer">&#xe606;</span>note</span>
+    
+        <span class="sidebar-tag-name" data-tags="ML note"><span class="iconfont-archer">&#xe606;</span>ML note</span>
     
         <span class="sidebar-tag-name" data-tags="note，git"><span class="iconfont-archer">&#xe606;</span>note，git</span>
     
@@ -790,22 +789,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 
