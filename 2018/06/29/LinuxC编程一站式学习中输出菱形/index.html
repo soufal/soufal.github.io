@@ -397,24 +397,17 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="linux-cc编程一站式学习中输出菱形"><a class="markdownIt-Anchor" href="#linux-cc编程一站式学习中输出菱形"></a> Linux C/C++编程一站式学习中输出菱形</h1>
-<h3 id="目录"><a class="markdownIt-Anchor" href="#目录"></a> 目录</h3>
-<p>[TOC]</p>
-<p>最近在看Linux C/C++编程一站式学习复习C语言，发现很多题目虽然是之前熟悉的题目，但是做起来会想很久。<br>
-现在就遇到了一道看似很简单的输出菱形的题目，但是弄了一晚上。</p>
-<h3 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h3>
-<ul>
+        <h1 id="Linux-C-C-编程一站式学习中输出菱形"><a href="#Linux-C-C-编程一站式学习中输出菱形" class="headerlink" title="Linux C/C++编程一站式学习中输出菱形"></a>Linux C/C++编程一站式学习中输出菱形</h1><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>[TOC]</p>
+<p>最近在看Linux C/C++编程一站式学习复习C语言，发现很多题目虽然是之前熟悉的题目，但是做起来会想很久。<br>现在就遇到了一道看似很简单的输出菱形的题目，但是弄了一晚上。</p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
 <li>题目如下：</li>
-<li>编写函数 diamond 打印一个菱形。如果调用 diamond(3, ‘*’) 则打印:<br>
-<img src="http://img.blog.csdn.net/20170927204327203?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTU2MjEyMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
+<li>编写函数 diamond 打印一个菱形。如果调用 diamond(3, ‘*’) 则打印:<br><img src="http://img.blog.csdn.net/20170927204327203?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTU2MjEyMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
 </ul>
 <p>如果调用 diamond(5, ‘+’) 则打印:</p>
-<p><img src="http://img.blog.csdn.net/20170927204356335?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTU2MjEyMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>
-如果用偶数做参数则打印错误提示。</p>
+<p><img src="http://img.blog.csdn.net/20170927204356335?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTU2MjEyMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>如果用偶数做参数则打印错误提示。</p>
 <hr>
 <p>要分成上下两部分来分开考虑，结合起来考虑很难找到行数，总数和空格，字符之间的关系，只有分开来考虑，分开来找出他们之间的关系才能够完成该代码。</p>
-<h3 id="c语言代码"><a class="markdownIt-Anchor" href="#c语言代码"></a> C语言代码</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">diamond</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,k;</span><br><span class="line">	<span class="keyword">if</span>(n%<span class="number">2</span> != <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">1</span>;i &lt;= n/<span class="number">2</span>+<span class="number">1</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(j = n/<span class="number">2</span>-i+<span class="number">1</span>;j &gt; <span class="number">0</span>;j--)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">			<span class="keyword">for</span>(k = <span class="number">1</span>;k &lt;= <span class="number">2</span>*i<span class="number">-1</span>;k++)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%c"</span>,m);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">1</span>;i &lt;= n/<span class="number">2</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(j = <span class="number">1</span>;j &lt;= i ;j++)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">			<span class="keyword">for</span>(k = <span class="number">1</span>;k &lt;= n<span class="number">-2</span>*i;k++)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%c"</span>,m);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Error!\n"</span>);</span><br><span class="line">			</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	diamond(<span class="number">9</span>,<span class="string">'#'</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">diamond</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,k;</span><br><span class="line">	<span class="keyword">if</span>(n%<span class="number">2</span> != <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">1</span>;i &lt;= n/<span class="number">2</span>+<span class="number">1</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(j = n/<span class="number">2</span>-i+<span class="number">1</span>;j &gt; <span class="number">0</span>;j--)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">			<span class="keyword">for</span>(k = <span class="number">1</span>;k &lt;= <span class="number">2</span>*i<span class="number">-1</span>;k++)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%c"</span>,m);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">1</span>;i &lt;= n/<span class="number">2</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(j = <span class="number">1</span>;j &lt;= i ;j++)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">			<span class="keyword">for</span>(k = <span class="number">1</span>;k &lt;= n<span class="number">-2</span>*i;k++)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%c"</span>,m);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Error!\n"</span>);</span><br><span class="line">			</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	diamond(<span class="number">9</span>,<span class="string">'#'</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20170927204913108?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTU2MjEyMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="结果如下"></p>
 
     </article>
@@ -440,8 +433,8 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" title= LinuxC编程一站式学习中_选择排序 >
-                    <div class="prevTitle">LinuxC编程一站式学习中_选择排序</div>
+                <a href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" title= LinuxC编程一站式学习中_折半查找 >
+                    <div class="prevTitle">LinuxC编程一站式学习中_折半查找</div>
                 </a>
             
         </li>
@@ -546,7 +539,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux-cc编程一站式学习中输出菱形"><span class="toc-number">1.</span> <span class="toc-text"> Linux C/C++编程一站式学习中输出菱形</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#目录"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#c语言代码"><span class="toc-number">1.0.3.</span> <span class="toc-text"> C语言代码</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-C-C-编程一站式学习中输出菱形"><span class="toc-number">1.</span> <span class="toc-text">Linux C/C++编程一站式学习中输出菱形</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#目录"><span class="toc-number">1.0.1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.2.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言代码"><span class="toc-number">1.0.3.</span> <span class="toc-text">C语言代码</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -559,8 +552,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -696,12 +687,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
         </li>
     
     
@@ -810,7 +801,22 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 

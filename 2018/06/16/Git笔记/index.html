@@ -397,20 +397,16 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="git分布式版本控制系统"><a class="markdownIt-Anchor" href="#git分布式版本控制系统"></a> Git分布式版本控制系统：</h1>
-<p>学习<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b00" target="_blank" rel="noopener">廖雪峰的git教程</a>  笔记( 图片转自<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b00" target="_blank" rel="noopener">廖雪峰</a> ）。</p>
-<h3 id="一-简介"><a class="markdownIt-Anchor" href="#一-简介"></a> 一、简介</h3>
-<ul>
+        <h1 id="Git分布式版本控制系统："><a href="#Git分布式版本控制系统：" class="headerlink" title="Git分布式版本控制系统："></a>Git分布式版本控制系统：</h1><p>学习<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b00" target="_blank" rel="noopener">廖雪峰的git教程</a>  笔记( 图片转自<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b00" target="_blank" rel="noopener">廖雪峰</a> ）。</p>
+<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><ul>
 <li>随时掌握工作区的状态，使用<code>git status</code>命令。</li>
 <li>如果<code>git status</code> 告诉你有文件被修改过，可以用<code>git diff</code> 查看修改内容。</li>
 <li>在<code>git</code>中进行修改后可以保存一个快照，称为<code>commit</code>，如果文件被删除，可以通过最近一个<code>commit</code>恢复。</li>
-<li>使用<code>git log</code>命令来查看历史记录。
-<ul>
+<li>使用<code>git log</code>命令来查看历史记录。 <ul>
 <li><code>--pretty=oneline</code>参数简要输出相关信息。</li>
 </ul>
 </li>
-<li>回退到上一个版本：
-<ul>
+<li>回退到上一个版本：<ul>
 <li>在<code>git</code>中，<code>HEAD</code>表示当前版本，上一个版本就是<code>HEAD^</code>,上上个版本就是<code>HEAD^^</code>。（上100个版本<code>HEAD~100</code>。</li>
 <li>把当前版本回退分层上一个版本，使用<code>git reset --hard &lt;HEAD^&gt;</code>命令。</li>
 <li>回到未来的版本，使用<code>git reset --hard &lt;commit ID&gt;</code>(前提是命令行窗口未关闭，版本号可以写前几位即可）</li>
@@ -418,19 +414,13 @@ height:50vh;
 </ul>
 </li>
 </ul>
-<h3 id="二-工作区和暂存区"><a class="markdownIt-Anchor" href="#二-工作区和暂存区"></a> 二、工作区和暂存区</h3>
-<ul>
-<li>工作区（working directory）<br>
-创建的文件夹就是一个工作区。</li>
-<li>版本库（Repository）：<br>
-工作区中隐藏的目录<code>.git</code>是Git的版本库。<br>
-版本库中存有（隐藏目录）：
-<ul>
+<h3 id="二、工作区和暂存区"><a href="#二、工作区和暂存区" class="headerlink" title="二、工作区和暂存区"></a>二、工作区和暂存区</h3><ul>
+<li>工作区（working directory）<br>创建的文件夹就是一个工作区。</li>
+<li>版本库（Repository）：<br>工作区中隐藏的目录<code>.git</code>是Git的版本库。<br>版本库中存有（隐藏目录）：<ul>
 <li>stage（index）暂存区</li>
 <li>Git自动创建的第一个分支：<code>master</code>.</li>
 <li>指向<code>master</code>的一个指针<code>HEAD</code>。</li>
-<li>在往Git版本库中添加文件时，分两步执行：
-<ul>
+<li>在往Git版本库中添加文件时，分两步执行：<ul>
 <li>1、用<code>git add</code>把文件加进去，实际上就是把文件修改添加到暂存区；</li>
 <li>2、用<code>git commit</code>提交更改，实际上就是把暂存处的所有内容提交到当前分支<code>master</code>。</li>
 </ul>
@@ -439,108 +429,75 @@ height:50vh;
 </li>
 </ul>
 <p><strong>需要提交的文件修改后通通放到暂存区，然后，一次性提交暂存区的所有修改。</strong></p>
-<h3 id="三-管理修改"><a class="markdownIt-Anchor" href="#三-管理修改"></a> 三、管理修改</h3>
-<ul>
-<li><code>Git</code>跟踪并管理的是修改，而非文件。<br>
-每次修改文件过后，如果不用<code>git add</code>将文件提交到暂存区，同样的文件也不会加入到<code>commit</code>中。</li>
+<h3 id="三、管理修改"><a href="#三、管理修改" class="headerlink" title="三、管理修改"></a>三、管理修改</h3><ul>
+<li><p><code>Git</code>跟踪并管理的是修改，而非文件。<br>每次修改文件过后，如果不用<code>git add</code>将文件提交到暂存区，同样的文件也不会加入到<code>commit</code>中。  </p>
+<h4 id="1、撤销更改"><a href="#1、撤销更改" class="headerlink" title="1、撤销更改"></a>1、撤销更改</h4><p>在<code>git add</code> 之前发现文件修改有错，可以使用<code>git checkout -- [filename]</code>丢弃<em>工作区</em>的修改。<br><strong>命令<code>git checkout -- readme.txt</code>有两种情况：<br>1、文件<code>readme.txt</code>自修改后还没有被放到暂存区，撤销修改就回到和版本库一模一样的状态。（还未使用<code>git add</code>）<br>2、文件已经被添加到暂存区后，又做了修改，撤销修改就回到添加到暂存区后的状态。（已经使用了<code>git add</code>后对文件进行了修改）<br>也就是让文件回到最近一次<code>git commit</code>或<code>git add</code>状态</strong><br><em>如果<code>git checkout -- file</code>命令没有使用<code>--</code>，就会变成“切换到另一个分支”的命令。</em>  </p>
+</li>
+<li><p>在修改文件并使用了<code>git add</code>将文件放到了暂存区后，可以使用<code>git reset HEAD &lt;file&gt;</code>命令可以把<em>暂存区</em>的修改撤销掉（unstage），重新将文件放回工作区。</p>
+</li>
 </ul>
-<h4 id="1-撤销更改"><a class="markdownIt-Anchor" href="#1-撤销更改"></a> 1、撤销更改</h4>
-<p>在<code>git add</code> 之前发现文件修改有错，可以使用<code>git checkout -- [filename]</code>丢弃<em>工作区</em>的修改。<br>
-<strong>命令<code>git checkout -- readme.txt</code>有两种情况：<br>
-1、文件<code>readme.txt</code>自修改后还没有被放到暂存区，撤销修改就回到和版本库一模一样的状态。（还未使用<code>git add</code>）<br>
-2、文件已经被添加到暂存区后，又做了修改，撤销修改就回到添加到暂存区后的状态。（已经使用了<code>git add</code>后对文件进行了修改）<br>
-也就是让文件回到最近一次<code>git commit</code>或<code>git add</code>状态</strong><br>
-<em>如果<code>git checkout -- file</code>命令没有使用<code>--</code>，就会变成“切换到另一个分支”的命令。</em></p>
-<ul>
-<li>在修改文件并使用了<code>git add</code>将文件放到了暂存区后，可以使用<code>git reset HEAD &lt;file&gt;</code>命令可以把<em>暂存区</em>的修改撤销掉（unstage），重新将文件放回工作区。</li>
-</ul>
-<h3 id="四-删除文件"><a class="markdownIt-Anchor" href="#四-删除文件"></a> 四、删除文件</h3>
-<p>当需要删除已给文件时，在工作区将文件删除后，需要从版本库删除文件<code>git rm &lt;file&gt;</code>。然后使用<code>git commit -m &quot;&quot;</code>进行提交，这样工作区和版本库都将该文件删除了。<br>
-如果在工作区中删错了文件，可以使用<code>git checkout -- &lt;file&gt;</code>将误删的文件恢复到最新版本<em>实际上该命令是用版本库里的版本替换工作区的版本</em>。</p>
-<h3 id="五-远程仓库"><a class="markdownIt-Anchor" href="#五-远程仓库"></a> 五、远程仓库</h3>
-<ul>
-<li>关联<code>github</code>：</li>
+<h3 id="四、删除文件"><a href="#四、删除文件" class="headerlink" title="四、删除文件"></a>四、删除文件</h3><p>当需要删除已给文件时，在工作区将文件删除后，需要从版本库删除文件<code>git rm &lt;file&gt;</code>。然后使用<code>git commit -m &quot;&quot;</code>进行提交，这样工作区和版本库都将该文件删除了。<br>如果在工作区中删错了文件，可以使用<code>git checkout -- &lt;file&gt;</code>将误删的文件恢复到最新版本<em>实际上该命令是用版本库里的版本替换工作区的版本</em>。</p>
+<h3 id="五、远程仓库"><a href="#五、远程仓库" class="headerlink" title="五、远程仓库"></a>五、远程仓库</h3><ul>
+<li>关联<code>github</code>：  </li>
 </ul>
 <ol>
 <li>创建SSH Key：使用<code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code>创建秘钥。</li>
-<li>进入<code>.shh</code>文件夹复制<code>id_rsa.pub</code>公钥中的内容到Github中的<code>Add SSH Key</code>中。<br>
-<em>如果有多台电脑，则可以在每一台电脑中生成一个新的Key并添加到github中。</em></li>
+<li>进入<code>.shh</code>文件夹复制<code>id_rsa.pub</code>公钥中的内容到Github中的<code>Add SSH Key</code>中。<br><em>如果有多台电脑，则可以在每一台电脑中生成一个新的Key并添加到github中。</em></li>
 </ol>
 <ul>
-<li>添加远程库：
-<ul>
+<li>添加远程库：  <ul>
 <li>在github上新建一个仓库后，同本地已有的仓库关联，然后把本地仓库推送到Github库：使用<code>git remote add origin https://github.com/soufal/my_git.git</code>，这样添加后的远程库的名字就为<code>origin</code>，是git的默认叫法。</li>
 </ul>
 </li>
-<li>推送：
-<ul>
-<li>使用<code>git push -u origin master</code>把本地库的所有内容推送到远程库。<br>
-<strong>这里使用加<code>-u</code>的命令是因为第一次推送<code>master</code>分支时，Git不但会吧本地的<code>master</code>分支内容推送到远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或拉取时就可以简化命令了。</strong></li>
+<li>推送：<ul>
+<li>使用<code>git push -u origin master</code>把本地库的所有内容推送到远程库。<br><strong>这里使用加<code>-u</code>的命令是因为第一次推送<code>master</code>分支时，Git不但会吧本地的<code>master</code>分支内容推送到远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或拉取时就可以简化命令了。</strong></li>
 </ul>
 </li>
-<li>从远程库克隆
-<ul>
+<li>从远程库克隆<ul>
 <li>可以现在Github上创建一个远程库<code>new</code>，再从远程库克隆到本地。使用<code>git clone https://github.com/soufal/new.git</code>或者<code>git clone git@github.com:soufal/new.git</code>。</li>
 <li>两者的不同在于：前者使用的是<code>https</code>协议，速度较慢，每次推送都需要输入口令。后者使用的是<code>SSH</code>协议，其速度较快。</li>
-<li></li>
+<li><h3 id="六、分支管理"><a href="#六、分支管理" class="headerlink" title="六、分支管理"></a>六、分支管理</h3>可以创建一个属于自己的分支，其他人看不到，还可以在原来的分支上继续工作，自己可以在自己的分支上继续工作。需要提交后再提交，可以一次性合并到原来的分支上。</li>
 </ul>
 </li>
 </ul>
-<h3 id="六-分支管理"><a class="markdownIt-Anchor" href="#六-分支管理"></a> 六、分支管理</h3>
-<p>可以创建一个属于自己的分支，其他人看不到，还可以在原来的分支上继续工作，自己可以在自己的分支上继续工作。需要提交后再提交，可以一次性合并到原来的分支上。</p>
-<h4 id="1-创建于合并分支"><a class="markdownIt-Anchor" href="#1-创建于合并分支"></a> 1、创建于合并分支：</h4>
-<p>在<code>Git</code>中，每一次的提交，Git都会把这些提交串成一条时间线，这条时间线就是一个分支。一直在使用的默认分支叫做主分支。即<code>master</code>分支。<code>HEAD</code>严格来说是指向<code>master</code>的，<code>master</code>才是指向提交的。所以可以说：<em><code>HEAD</code>指向的就是当前分支。</em><br>
-一开始，<code>master</code>分支就是一条线，Git用<code>master</code>指向最新的提交，再用<code>HEAD</code>指向<code>master</code>，就可以确定当前分支以及当前分支的提交点：<br>
-<img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849087937492135fbf4bbd24dfcbc18349a8a59d36d000/0" alt="image1"></p>
-<p>当创建新的分支时<code>dev</code>时，git新建一个指针叫做<code>dev</code>，指向<code>master</code>相同的提交，再把<code>HEAD</code>指向<code>dev</code>，就表示当前分支在<code>dev</code>上：<br>
-<img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908811773187a597e2d844eefb11f5cf5d56135ca000/0" alt="image2"></p>
+<h4 id="1、创建于合并分支："><a href="#1、创建于合并分支：" class="headerlink" title="1、创建于合并分支："></a>1、创建于合并分支：</h4><p>在<code>Git</code>中，每一次的提交，Git都会把这些提交串成一条时间线，这条时间线就是一个分支。一直在使用的默认分支叫做主分支。即<code>master</code>分支。<code>HEAD</code>严格来说是指向<code>master</code>的，<code>master</code>才是指向提交的。所以可以说：<em><code>HEAD</code>指向的就是当前分支。</em><br>一开始，<code>master</code>分支就是一条线，Git用<code>master</code>指向最新的提交，再用<code>HEAD</code>指向<code>master</code>，就可以确定当前分支以及当前分支的提交点：<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849087937492135fbf4bbd24dfcbc18349a8a59d36d000/0" alt="image1"></p>
+<p>当创建新的分支时<code>dev</code>时，git新建一个指针叫做<code>dev</code>，指向<code>master</code>相同的提交，再把<code>HEAD</code>指向<code>dev</code>，就表示当前分支在<code>dev</code>上：<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908811773187a597e2d844eefb11f5cf5d56135ca000/0" alt="image2"></p>
 <p>因此可以看出git创建一个分支很快，只需要增加一个指标<code>dev</code>，并修改<code>HEAD</code>的指向即可。修改过后，对工作区的修改和提交就只是针对<code>dev</code>分支了，而<code>master</code>指针不变：</p>
 <p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849088235627813efe7649b4f008900e5365bb72323000/0" alt="image3"></p>
 <p>如果在<code>dev</code>上的工作完成了，就可以将<code>dev</code>合并回<code>master</code>上。可以直接将<code>master</code>指向<code>dev</code>的当前提交（正如最开始创建分支一样），就完成了合并：</p>
 <p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/00138490883510324231a837e5d4aee844d3e4692ba50f5000/0" alt="image4"></p>
-<p>合并同样也很快，也只需要改指针。<br>
-合并完成后，可以删除<code>dev</code>分支，也就是把<code>dev</code>指针删除，删除后就值剩下一个<code>master</code>分支。<br>
-<img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908867187c83ca970bf0f46efa19badad99c40235000/0" alt="image"></p>
-<h4 id="2-相关命令"><a class="markdownIt-Anchor" href="#2-相关命令"></a> 2、相关命令：</h4>
-<ul>
-<li>创建<code>dev</code>：<br>
-<code>git checkout -b dev</code><br>
-<code>git checkout</code>命令加上<code>-b</code>参数表示创建并切换。相当于:</li>
+<p>合并同样也很快，也只需要改指针。<br>合并完成后，可以删除<code>dev</code>分支，也就是把<code>dev</code>指针删除，删除后就值剩下一个<code>master</code>分支。<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908867187c83ca970bf0f46efa19badad99c40235000/0" alt="image"></p>
+<h4 id="2、相关命令："><a href="#2、相关命令：" class="headerlink" title="2、相关命令："></a>2、相关命令：</h4><ul>
+<li>创建<code>dev</code>：<br><code>git checkout -b dev</code><br><code>git checkout</code>命令加上<code>-b</code>参数表示创建并切换。相当于:  </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch dev  </span><br><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
 <ul>
-<li>可以使用<code>git branch</code>查看当前分支。<strong>会列出所有的分支，当前分支前有一个<code>*</code></strong><br>
-当完成工作提交后，通过<code>git checkout master</code>命令返回<code>master</code>分支。<br>
-然后使用<code>git merge dev</code>把<code>dev</code>上的工作合并到<code>master</code>上。<br>
-<strong>该指令用于合并指定分支到当前分支。</strong></li>
-<li>合并完成后使用<code>git branch -d dev</code>删除<code>dev</code>分支。</li>
+<li>可以使用<code>git branch</code>查看当前分支。<strong>会列出所有的分支，当前分支前有一个<code>*</code></strong><br>当完成工作提交后，通过<code>git checkout master</code>命令返回<code>master</code>分支。<br>然后使用<code>git merge dev</code>把<code>dev</code>上的工作合并到<code>master</code>上。<br><strong>该指令用于合并指定分支到当前分支。</strong>  </li>
+<li>合并完成后使用<code>git branch -d dev</code>删除<code>dev</code>分支。  </li>
 <li>使用<code>git log</code>可以查看分支合并情况。</li>
 <li>使用<code>git log --graph</code>乐意查看分支合并图。</li>
 </ul>
-<h4 id="3-分支管理策略"><a class="markdownIt-Anchor" href="#3-分支管理策略"></a> 3、分支管理策略</h4>
-<ul>
-<li>合并分支时，Git会用<code>Fast forward</code>模式，在这种模式下，删除分支后，会丢掉分支信息。</li>
-<li>使用<code>--no-ff</code>方式的<code>git merge</code>会强制禁用<code>Fast forward</code>，这样git会在<code>merge</code>时生成一个新的<code>commit</code>，这样可以从分支历史上看出分支信息。 （<em>创建新的<code>commit</code>可以用过加上<code>-m</code>参数实现</em>）</li>
+<h4 id="3、分支管理策略"><a href="#3、分支管理策略" class="headerlink" title="3、分支管理策略"></a>3、分支管理策略</h4><ul>
+<li>合并分支时，Git会用<code>Fast forward</code>模式，在这种模式下，删除分支后，会丢掉分支信息。  </li>
+<li>使用<code>--no-ff</code>方式的<code>git merge</code>会强制禁用<code>Fast forward</code>，这样git会在<code>merge</code>时生成一个新的<code>commit</code>，这样可以从分支历史上看出分支信息。 （<em>创建新的<code>commit</code>可以用过加上<code>-m</code>参数实现</em>） </li>
 </ul>
 <hr>
 <p>在实际开发中，管理分支的几种原则：</p>
 <ul>
 <li><code>master</code>分支应该是稳定的，也是仅仅用来发布新版本，平时不在其上进行工作。</li>
 <li>工作都在<code>dev</code>分支上，因为<code>dev</code>是不稳定的。</li>
-<li>可以在<code>dev</code>上再创建新的分支，和别人协同工作，最后再合并到<code>dev</code>上。如下图所示：<br>
-<img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384909239390d355eb07d9d64305b6322aaf4edac1e3000/0" alt="image5"></li>
+<li>可以在<code>dev</code>上再创建新的分支，和别人协同工作，最后再合并到<code>dev</code>上。如下图所示：<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384909239390d355eb07d9d64305b6322aaf4edac1e3000/0" alt="image5"></li>
 </ul>
 <hr>
 <ul>
-<li>Bug分支：<br>
-Git提供了一个<code>stash</code>功能，可以把当前工作现场“储存”起来，等当前临时工作做完后再恢复现场继续工作：  <code>git stash</code>。</li>
+<li>Bug分支：<br>Git提供了一个<code>stash</code>功能，可以把当前工作现场“储存”起来，等当前临时工作做完后再恢复现场继续工作：  <code>git stash</code>。<ul>
 <li>确定bug需要在哪个分支上修复，就在那个分支上创建新的临时分支。</li>
-<li>恢复工作区：使用<code>git stash list</code>查看之前隐藏的工作区。恢复方法有两种:
-<ul>
+<li>恢复工作区：使用<code>git stash list</code>查看之前隐藏的工作区。恢复方法有两种:<ul>
 <li>使用<code>git stash apply</code>恢复，但是恢复后，stash的内容并不删除，需要再使用<code>git stash pop</code>来删除。</li>
 <li>使用<code>git stash pop</code>，恢复的同时会把stash的内容也删了。</li>
-<li>可以多次<code>stash</code>，使用<code>git stash list</code>查看，然后恢复指定的stash。<br>
-使用<code>git stash apply stash@ {id}</code>。</li>
+<li>可以多次<code>stash</code>，使用<code>git stash list</code>查看，然后恢复指定的stash。<br>使用<code>git stash apply stash@ {id}</code>。</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -674,7 +631,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git分布式版本控制系统"><span class="toc-number">1.</span> <span class="toc-text"> Git分布式版本控制系统：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-简介"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 一、简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-工作区和暂存区"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 二、工作区和暂存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-管理修改"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 三、管理修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-撤销更改"><span class="toc-number">1.0.3.1.</span> <span class="toc-text"> 1、撤销更改</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-删除文件"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 四、删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-远程仓库"><span class="toc-number">1.0.5.</span> <span class="toc-text"> 五、远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六-分支管理"><span class="toc-number">1.0.6.</span> <span class="toc-text"> 六、分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-创建于合并分支"><span class="toc-number">1.0.6.1.</span> <span class="toc-text"> 1、创建于合并分支：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-相关命令"><span class="toc-number">1.0.6.2.</span> <span class="toc-text"> 2、相关命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-分支管理策略"><span class="toc-number">1.0.6.3.</span> <span class="toc-text"> 3、分支管理策略</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git分布式版本控制系统："><span class="toc-number">1.</span> <span class="toc-text">Git分布式版本控制系统：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、简介"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、工作区和暂存区"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、工作区和暂存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、管理修改"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、管理修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、撤销更改"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1、撤销更改</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、删除文件"><span class="toc-number">1.0.4.</span> <span class="toc-text">四、删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、远程仓库"><span class="toc-number">1.0.5.</span> <span class="toc-text">五、远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、分支管理"><span class="toc-number">1.0.6.</span> <span class="toc-text">六、分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、创建于合并分支："><span class="toc-number">1.0.6.1.</span> <span class="toc-text">1、创建于合并分支：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、相关命令："><span class="toc-number">1.0.6.2.</span> <span class="toc-text">2、相关命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、分支管理策略"><span class="toc-number">1.0.6.3.</span> <span class="toc-text">3、分支管理策略</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -687,8 +644,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -824,12 +779,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
         </li>
     
     
@@ -938,7 +893,22 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
