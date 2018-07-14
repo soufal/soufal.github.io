@@ -451,39 +451,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >
-            
-                <span>LinuxC编程一站式学习中_折半查找</span>
-        </a>
-        <div class="abstract-content">
-             Linux C/C++编程一站式学习中折半查找（如果待查找的元素在数组中有多个则返回第一个）
-##折半查找
-本节的折半查找算法有一个特点：如果待查找的元素在数组中有多个则返回其中任意一个，以本节定义的数组 int a[8] = { 1, 2, 2, 2, 5, 6, 8, 9 }; 为例，如果调用 binarysearch(2) 则返回3，即 a[3] ，而有些场合下要求这样的查找返回 a[1] （如果待查找的元素在数组中有多个则返回第一个）。请修改折半查找算法实现这一特性。
- 代码
-123456789101112131415161718192021222324252627282930...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "LinuxC code">LinuxC code</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >
             
                 <span>LinuxC编程一站式学习中_输出菱形</span>
@@ -534,6 +501,39 @@
         </a>
         <div class="abstract-content">
             1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define N 20int a[N];void gen_random(int upper_bound)&#1...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "LinuxC code">LinuxC code</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >
+            
+                <span>LinuxC编程一站式学习中_折半查找</span>
+        </a>
+        <div class="abstract-content">
+             Linux C/C++编程一站式学习中折半查找（如果待查找的元素在数组中有多个则返回第一个）
+##折半查找
+本节的折半查找算法有一个特点：如果待查找的元素在数组中有多个则返回其中任意一个，以本节定义的数组 int a[8] = { 1, 2, 2, 2, 5, 6, 8, 9 }; 为例，如果调用 binarysearch(2) 则返回3，即 a[3] ，而有些场合下要求这样的查找返回 a[1] （如果待查找的元素在数组中有多个则返回第一个）。请修改折半查找算法实现这一特性。
+ 代码
+123456789101112131415161718192021222324252627282930...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -836,8 +836,6 @@
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 9
@@ -868,17 +866,17 @@
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_以可视化的形式打印直方图/" >LinuxC编程一站式学习中_以可视化形式打印菱形</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >LinuxC编程一站式学习中_输出菱形</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
         </li>
     
     
@@ -980,7 +978,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
