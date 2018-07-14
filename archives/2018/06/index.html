@@ -340,6 +340,50 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >
+            
+                <span>LinuxC编程一站式学习中_输出菱形</span>
+        </a>
+        <div class="abstract-content">
+             Linux C/C++编程一站式学习中输出菱形
+ 目录
+[TOC]
+最近在看Linux C/C++编程一站式学习复习C语言，发现很多题目虽然是之前熟悉的题目，但是做起来会想很久。
+现在就遇到了一道看似很简单的输出菱形的题目，但是弄了一晚上。
+ 题目描述
+
+题目如下：
+编写函数 diamond 打印一个菱形。如果调用 diamond(3, ‘*’) 则打印:
+
+
+如果调用 diamond(5, ‘+’) 则打印:
+
+如果用偶数做参数则打印错误提示。
+
+要分成上下两部分来分开考虑，结合起来考虑很难找到行数，总数和空格，字符之间的关系，只有分开来考虑，分开来找出他们之间的关系才能够完成该代码...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "LinuxC code">LinuxC code</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习_以可视化的形式打印直方图/" >
             
                 <span>LinuxC编程一站式学习中_以可视化形式打印菱形</span>
@@ -369,53 +413,21 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >
-            
-                <span>LinuxC编程一站式学习中_输出菱形</span>
-        </a>
-        <div class="abstract-content">
-            Linux C/C++编程一站式学习中输出菱形目录[TOC]
-最近在看Linux C/C++编程一站式学习复习C语言，发现很多题目虽然是之前熟悉的题目，但是做起来会想很久。现在就遇到了一道看似很简单的输出菱形的题目，但是弄了一晚上。
-题目描述
-题目如下：
-编写函数 diamond 打印一个菱形。如果调用 diamond(3, ‘*’) 则打印:
-
-如果调用 diamond(5, ‘+’) 则打印:
-如果用偶数做参数则打印错误提示。
-
-要分成上下两部分来分开考虑，结合起来考虑很难找到行数，总数和空格，字符之间的关系，只有分开来考虑，分开来找出他们之间的关系才能够完成该代码。
-C语言代码12...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "LinuxC code">LinuxC code</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习_选择排序/" >
             
                 <span>LinuxC编程一站式学习中_选择排序</span>
         </a>
         <div class="abstract-content">
-            Linux C/C++编程一站式学习中选择排序选择排序实现选择排序（Selection Sort）算法：第一次从数组 a[0..LEN-1] 中找出最小元素交换到 a[0] 的位置，第二次从数组 a[1..LEN-1] 中找出最小元素交换到 a[1] 的位置，依此类推。排序过程举例如下:
-10, 5, 2, 4, 72, 5, 10, 4, 72, 4, 10, 5, 72, 4, 5, 10, 72, 4, 5, 7, 10
-代码12345678910111213141516171819202122232425262728293031#include &lt;stdio.h&gt;#d...
+             Linux C/C++编程一站式学习中选择排序
+ 选择排序
+实现选择排序（Selection Sort）算法：第一次从数组 a[0…LEN-1] 中找出最小元素交换到 a[0] 的位置，第二次从数组 a[1…LEN-1] 中找出最小元素交换到 a[1] 的位置，依此类推。排序过程举例如下:
+10, 5, 2, 4, 7
+2, 5, 10, 4, 7
+2, 4, 10, 5, 7
+2, 4, 5, 10, 7
+2, 4, 5, 7, 10
+ 代码
+12345678910111213141516171819202122232425262728293031#include &lt;stdio...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -444,8 +456,11 @@ C语言代码12...
                 <span>LinuxC编程一站式学习中_折半查找</span>
         </a>
         <div class="abstract-content">
-            Linux C/C++编程一站式学习中折半查找（如果待查找的元素在数组中有多个则返回第一个）折半查找本节的折半查找算法有一个特点：如果待查找的元素在数组中有多个则返回其中任意一个，以本节定义的数组 int a[8] = { 1, 2, 2, 2, 5, 6, 8, 9 }; 为例，如果调用 binarysearch(2) 则返回3，即 a[3] ，而有些场合下要求这样的查找返回 a[1] （如果待查找的元素在数组中有多个则返回第一个）。请修改折半查找算法实现这一特性。
-代码1234567891011121314151617181920212223242526272829303132#in...
+             Linux C/C++编程一站式学习中折半查找（如果待查找的元素在数组中有多个则返回第一个）
+##折半查找
+本节的折半查找算法有一个特点：如果待查找的元素在数组中有多个则返回其中任意一个，以本节定义的数组 int a[8] = { 1, 2, 2, 2, 5, 6, 8, 9 }; 为例，如果调用 binarysearch(2) 则返回3，即 a[3] ，而有些场合下要求这样的查找返回 a[1] （如果待查找的元素在数组中有多个则返回第一个）。请修改折半查找算法实现这一特性。
+ 代码
+123456789101112131415161718192021222324252627282930...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -474,9 +489,13 @@ C语言代码12...
                 <span>paper note</span>
         </a>
         <div class="abstract-content">
-            Prediction of Prediction of off-target activities for the end-to-end design of CRISPR guide RNAs摘要：脱靶效应可导致次优基因编辑结果，是其发展的瓶颈。使用基于两个相互关联的机器学习模型的方法来预测脱靶效应—-叫做Elevation。  
+             Prediction of Prediction of off-target activities for the end-to-end design of CRISPR guide RNAs
+ 摘要：
+ 脱靶效应可导致次优基因编辑结果，是其发展的瓶颈。
+使用基于两个相互关联的机器学习模型的方法来预测脱靶效应—叫做Elevation。
 对独立的guide-target 对进行评分，然后同时将他们合并为一个唯一整体总结指导分数。还提出了一张评估方法用于：平衡活动和非活动guide之间的误差
-背景：减少脱靶影响最好的方式是：知道他们什么时候，在哪发生，并在平衡on-target效率的情况下设计一...
+ 背景：
+减少脱靶影响最好的方式是：知道他们什么时候，在哪发生，并在平衡on-target效率的情...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -505,18 +524,21 @@ C语言代码12...
                 <span>Git笔记</span>
         </a>
         <div class="abstract-content">
-            Git分布式版本控制系统：学习廖雪峰的git教程  笔记( 图片转自廖雪峰 ）。
-一、简介
+             Git分布式版本控制系统：
+学习廖雪峰的git教程  笔记( 图片转自廖雪峰 ）。
+ 一、简介
+
 随时掌握工作区的状态，使用git status命令。
 如果git status 告诉你有文件被修改过，可以用git diff 查看修改内容。
 在git中进行修改后可以保存一个快照，称为commit，如果文件被删除，可以通过最近一个commit恢复。
-使用git log命令来查看历史记录。 
+使用git log命令来查看历史记录。
+
 --pretty=oneline参数简要输出相关信息。
 
 
 回退到上一个版本：
-在git中，HEAD表示当前版本，上一个版本就是HEAD^,上上个版本就是HEAD^^。（上100个版本HEAD~100。
-把当前...
+
+在git中，HEAD表示当前版本，上一个版本就是HEAD^,上上个版本就是HEAD^^。（上100个版本HEAD~100...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -711,9 +733,26 @@ C语言代码12...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 7
+        Total : 8
         <!-- search  -->
         </div>
             <div class="site-search popup-trigger">
@@ -731,6 +770,11 @@ C语言代码12...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/14</span><a class="archive-post-title" href= "/2018/07/14/机器学习note/" >机器学习note</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中_折半查找/" >LinuxC编程一站式学习中_折半查找</a>
         </li>
     
@@ -741,12 +785,12 @@ C语言代码12...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >LinuxC编程一站式学习中_输出菱形</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_以可视化的形式打印直方图/" >LinuxC编程一站式学习中_以可视化形式打印菱形</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_以可视化的形式打印直方图/" >LinuxC编程一站式学习中_以可视化形式打印菱形</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >LinuxC编程一站式学习中_输出菱形</a>
         </li>
     
     
@@ -770,6 +814,8 @@ C语言代码12...
     <div class="sidebar-tags-name">
     
         <span class="sidebar-tag-name" data-tags="LinuxC code"><span class="iconfont-archer">&#xe606;</span>LinuxC code</span>
+    
+        <span class="sidebar-tag-name" data-tags="ML note"><span class="iconfont-archer">&#xe606;</span>ML note</span>
     
         <span class="sidebar-tag-name" data-tags="note"><span class="iconfont-archer">&#xe606;</span>note</span>
     
