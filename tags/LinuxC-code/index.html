@@ -369,21 +369,27 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习_选择排序/" >
+        <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >
             
-                <span>LinuxC编程一站式学习中_选择排序</span>
+                <span>LinuxC编程一站式学习中_输出菱形</span>
         </a>
         <div class="abstract-content">
-             Linux C/C++编程一站式学习中选择排序
- 选择排序
-实现选择排序（Selection Sort）算法：第一次从数组 a[0…LEN-1] 中找出最小元素交换到 a[0] 的位置，第二次从数组 a[1…LEN-1] 中找出最小元素交换到 a[1] 的位置，依此类推。排序过程举例如下:
-10, 5, 2, 4, 7
-2, 5, 10, 4, 7
-2, 4, 10, 5, 7
-2, 4, 5, 10, 7
-2, 4, 5, 7, 10
- 代码
-12345678910111213141516171819202122232425262728293031#include &lt;stdio...
+             Linux C/C++编程一站式学习中输出菱形
+ 目录
+[TOC]
+最近在看Linux C/C++编程一站式学习复习C语言，发现很多题目虽然是之前熟悉的题目，但是做起来会想很久。
+现在就遇到了一道看似很简单的输出菱形的题目，但是弄了一晚上。
+ 题目描述
+
+题目如下：
+编写函数 diamond 打印一个菱形。如果调用 diamond(3, ‘*’) 则打印:
+
+
+如果调用 diamond(5, ‘+’) 则打印:
+
+如果用偶数做参数则打印错误提示。
+
+要分成上下两部分来分开考虑，结合起来考虑很难找到行数，总数和空格，字符之间的关系，只有分开来考虑，分开来找出他们之间的关系才能够完成该代码...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -407,27 +413,21 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >
+        <a class="abstract-title" href = "/2018/06/29/LinuxC编程一站式学习_选择排序/" >
             
-                <span>LinuxC编程一站式学习中_输出菱形</span>
+                <span>LinuxC编程一站式学习中_选择排序</span>
         </a>
         <div class="abstract-content">
-             Linux C/C++编程一站式学习中输出菱形
- 目录
-[TOC]
-最近在看Linux C/C++编程一站式学习复习C语言，发现很多题目虽然是之前熟悉的题目，但是做起来会想很久。
-现在就遇到了一道看似很简单的输出菱形的题目，但是弄了一晚上。
- 题目描述
-
-题目如下：
-编写函数 diamond 打印一个菱形。如果调用 diamond(3, ‘*’) 则打印:
-
-
-如果调用 diamond(5, ‘+’) 则打印:
-
-如果用偶数做参数则打印错误提示。
-
-要分成上下两部分来分开考虑，结合起来考虑很难找到行数，总数和空格，字符之间的关系，只有分开来考虑，分开来找出他们之间的关系才能够完成该代码...
+             Linux C/C++编程一站式学习中选择排序
+ 选择排序
+实现选择排序（Selection Sort）算法：第一次从数组 a[0…LEN-1] 中找出最小元素交换到 a[0] 的位置，第二次从数组 a[1…LEN-1] 中找出最小元素交换到 a[1] 的位置，依此类推。排序过程举例如下:
+10, 5, 2, 4, 7
+2, 5, 10, 4, 7
+2, 4, 10, 5, 7
+2, 4, 5, 10, 7
+2, 4, 5, 7, 10
+ 代码
+12345678910111213141516171819202122232425262728293031#include &lt;stdio...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -661,6 +661,12 @@
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 9
@@ -696,12 +702,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >LinuxC编程一站式学习中_输出菱形</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习_选择排序/" >LinuxC编程一站式学习中_选择排序</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2018/06/29/LinuxC编程一站式学习中输出菱形/" >LinuxC编程一站式学习中_输出菱形</a>
         </li>
     
     
@@ -803,22 +809,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 
